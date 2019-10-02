@@ -2,29 +2,34 @@ import Head from 'next/head'
 
 import { config } from '../config/config'
 
-const PageHead = ({ path }) => {
-  const title = `${config.appName} – ${config.appTagline}`
+const PageHead = ({ title }) => {
+  const pageTitle = title
+    ? `${title} – ${config.appName}`
+    : `${config.appName} – ${config.appTagline}`
+
   const iconUrl = '/static/favicon.png'
+  const fontString = 'Source+Sans+Pro:300,400,700'
 
   return <Head>
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name='description' content={config.appDescription} />
     <meta charSet='utf-8' />
     <meta httpEquiv='content-language' content='en' />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     <link rel='shortcut icon' type='image/x-icon' href={iconUrl} />
+    <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${fontString}&display=swap`} />
     <link rel='stylesheet' href='/static/app.css' />
 
     <meta property='og:description' content={config.appDescription} />
     <meta property='og:locale' content='en_US' />
     <meta property='og:site_name' content={config.appName} />
-    <meta property='og:title' content={title} />
+    <meta property='og:title' content={pageTitle} />
 
     <meta name='twitter:card' content='summary' />
     <meta name='twitter:creator' content='@Weld_io' />
     <meta name='twitter:description' content={config.appDescription} />
     <meta name='twitter:site' content='@Weld_io' />
-    <meta name='twitter:title' content={title} />
+    <meta name='twitter:title' content={pageTitle} />
 
     <link rel='apple-touch-icon' href={iconUrl} />
     {/*

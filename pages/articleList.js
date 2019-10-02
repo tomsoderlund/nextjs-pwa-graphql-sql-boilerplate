@@ -7,11 +7,12 @@ import ArticleList from '../components/ArticleList'
 
 function IndexPage ({ query }) {
   return <main>
-    <PageHead path='/index' />
+    <PageHead title='Start page' />
 
     <h1>{config.appName}</h1>
 
     <ArticleList />
+
   </main>
 }
 
