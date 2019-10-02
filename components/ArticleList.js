@@ -35,7 +35,7 @@ const ArticleList = () => {
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          placeholder='Enter a article title'
+          placeholder='Enter an article title'
           name='title'
           value={inputs.title}
           onChange={handleInputChange}
