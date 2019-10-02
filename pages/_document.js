@@ -3,7 +3,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 
 import { googleAnalyticsId } from '../config/config'
 
-export default class NicheNewsDocument extends Document {
+export default class MyDocument extends Document {
   render () {
     return (
       <html>

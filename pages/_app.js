@@ -7,7 +7,7 @@ import withApolloClient from '../graphql/with-apollo-client'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
 
-class NicheNewsApp extends App {
+class MyApp extends App {
   render () {
     const { Component, pageProps, apolloClient } = this.props
     return (
@@ -20,4 +20,4 @@ class NicheNewsApp extends App {
   }
 }
 
-export default withApolloClient(NicheNewsApp)
+export default withApolloClient(MyApp)
