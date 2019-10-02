@@ -4,7 +4,7 @@ import { useGetArticles, useAddArticle } from '../hooks/useArticle'
 import ArticleItem from './ArticleItem'
 
 const useAddArticleForm = () => {
-  const [inputs, setInputs] = React.useState({})
+  const [inputs, setInputs] = React.useState({ title: '' })
   const addArticle = useAddArticle()
 
   const handleSubmit = async (event) => {
