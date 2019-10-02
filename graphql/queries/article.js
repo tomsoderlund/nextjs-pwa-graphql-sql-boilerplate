@@ -10,7 +10,7 @@ const ArticleShortInfo = `
   }
 `
 
-export const GET_NEWSITEMS = gql`
+export const GET_ARTICLES = gql`
   ${ArticleShortInfo}
   {
     articles (sort: "title asc") {
@@ -19,12 +19,12 @@ export const GET_NEWSITEMS = gql`
   }
 `
 
-// export const GET_NEWSITEMS_VARS = {
+// export const GET_ARTICLES_VARS = {
 //   skip: 0,
 //   first: 10
 // }
 
-export const GET_NEWSITEM_ITEM = articleSlug => {
+export const GET_ARTICLE_ITEM = articleSlug => {
   const articleId = articleSlug.split('-').pop()
   return gql`
     ${ArticleShortInfo}
@@ -38,7 +38,7 @@ export const GET_NEWSITEM_ITEM = articleSlug => {
   `
 }
 
-export const ADD_NEWSITEM = gql`
+export const ADD_ARTICLE = gql`
   ${ArticleShortInfo}
 
   mutation AddArticle ($title: String!) {
@@ -48,7 +48,7 @@ export const ADD_NEWSITEM = gql`
   }
 `
 
-export const DELETE_NEWSITEM = gql`
+export const DELETE_ARTICLE = gql`
   mutation DeleteArticle ($id: ID!) {
     deleteArticle (id: $id) {
       id
@@ -56,7 +56,7 @@ export const DELETE_NEWSITEM = gql`
   }
 `
 
-export const UPDATE_NEWSITEM = gql`
+export const UPDATE_ARTICLE = gql`
   ${ArticleShortInfo}
 
   mutation UpdateArticle ($id: ID!, $title: String) {

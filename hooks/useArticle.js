@@ -1,16 +1,16 @@
 import { useQuery, useMutation } from 'react-apollo-hooks'
 
-import { GET_NEWSITEMS, ADD_NEWSITEM, UPDATE_NEWSITEM, DELETE_NEWSITEM } from '../graphql/queries/article'
+import { GET_ARTICLES, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../graphql/queries/article'
 
 // Returns: { data, loading, error }
-export const useGetArticles = () => useQuery(GET_NEWSITEMS)
+export const useGetArticles = () => useQuery(GET_ARTICLES)
 
 export const useAddArticle = () => {
-  const addArticleMutation = useMutation(ADD_NEWSITEM, {
+  const addArticleMutation = useMutation(ADD_ARTICLE, {
     update: (cache, { data: { addArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_NEWSITEMS })
+      const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({
-        query: GET_NEWSITEMS,
+        query: GET_ARTICLES,
         data: {
           articles: [...articles, addArticle]
         }
@@ -21,11 +21,11 @@ export const useAddArticle = () => {
 }
 
 export const useUpdateArticle = () => {
-  const updateArticleMutation = useMutation(UPDATE_NEWSITEM, {
+  const updateArticleMutation = useMutation(UPDATE_ARTICLE, {
     update: (cache, { data: { updateArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_NEWSITEMS })
+      const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({
-        query: GET_NEWSITEMS,
+        query: GET_ARTICLES,
         data: {
           articles: articles.map(articleItem => articleItem.id !== updateArticle.id ? articleItem : updateArticle)
         }
@@ -36,12 +36,12 @@ export const useUpdateArticle = () => {
 }
 
 export const useDeleteArticle = (article) => {
-  const deleteArticleMutation = useMutation(DELETE_NEWSITEM, {
+  const deleteArticleMutation = useMutation(DELETE_ARTICLE, {
     variables: { id: article.id },
     update: (cache, { data: { deleteArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_NEWSITEMS })
+      const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({
-        query: GET_NEWSITEMS,
+        query: GET_ARTICLES,
         data: {
           articles: articles.filter(articleItem => articleItem.id !== deleteArticle.id)
         }
