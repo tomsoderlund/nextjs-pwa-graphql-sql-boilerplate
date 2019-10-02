@@ -1,0 +1,109 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 1em;
+	font-family: sans-serif;
+	font-size: 20px;
+}
+
+/* Nice & simple: Main - margin:auto */
+main {
+	margin: 0.5em auto;
+	width: 80%;
+	max-width: 600px;
+}
+
+@media only screen and (max-width: 480px) {
+	main {
+		width: 95%;
+		max-width: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	input, button {
+		width: 100%;
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+a.subtle {
+	color: inherit;
+	text-decoration: none;
+}
+a.subtle:hover {
+	text-decoration: underline;
+}
+
+/* Nice & simple: Button - http://codepen.io/tomsoderlund/pen/qqyzqp */
+button {
+	background-color: dodgerblue;
+	border-radius: 0.2em;
+	border: none;
+	box-shadow: 0 0.125em 0.125em rgba(0,0,0, 0.3);
+	box-sizing: border-box;
+	color: white;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
+	outline: none;
+	padding: 0.6em;
+	margin: 0.2em;
+	transition: all 0.2s;
+}
+button:hover:not(:disabled) {
+	opacity: 0.8;
+	transition: box-shadow 0s;
+}
+button:active {
+	margin-top: 0.3em;
+	margin-bottom: 0.1em;
+	box-shadow: 0 0.5px 0.125em rgba(0,0,0, 0.4);
+}
+button:disabled {
+	background-color: silver;
+}
+
+/* Nice & simple: Input and Dropdown Menu - http://codepen.io/tomsoderlund/pen/GNBbWz */
+input,
+textarea,
+select {
+	outline: none;
+	resize: none;
+	box-shadow: inset 0 0.125em 0.125em rgba(0,0,0, 0.3);
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 0.2em;
+	border: 2px solid lightgray;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.6em;
+	margin: 0.2em;
+}
+input:hover:not(:disabled),
+textarea:hover:not(:disabled),
+select:hover:not(:disabled) {
+	border-color: silver;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	border-color: darkgray;
+}
+input:disabled,
+textarea:disabled,
+select:disabled {
+	background-color: whitesmoke;
+}
+
+.navigation-menu .menu-item {
+	display: inline-block;
+	margin: 0 0.5em;
+}
