@@ -1,4 +1,4 @@
-# Next.js (React) + GraphQL (Apollo) + Postgres SQL boilerplate
+# Next.js + React Hooks + GraphQL (Apollo) + Postgres SQL boilerplate
 
 _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-api-boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [nextjs-express-mongoose-crudify-boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
 
@@ -7,7 +7,8 @@ _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-a
 This is a great starting point for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
-* GraphQL API Apollo.
+* GraphQL API with Apollo.
+* React Hooks for business logic.
 * Flexible client-side routing with `next-routes` (see `server/routes.js`).
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
