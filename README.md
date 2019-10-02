@@ -18,7 +18,7 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-graphql-hooks-boilerplate** running on Heroku here](https://nextjs-sql-rest-api.herokuapp.com/).
+See [**nextjs-graphql-hooks-boilerplate** running on Heroku here](https://nextjs-graphql-hooks.herokuapp.com/).
 
 ![nextjs-graphql-hooks-boilerplate demo on Heroku](docs/demo.gif)
 
