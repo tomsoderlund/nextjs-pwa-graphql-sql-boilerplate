@@ -7,7 +7,7 @@ const completeConfig = {
     serverPort,
     appSlug,
     appUrl: 'https://nextjs-graphql-hooks.herokuapp.com/',
-    appName: 'Next.js + GraphQL + Postgres SQL boilerplate',
+    appName: 'Next.js + React Hooks + GraphQL + Postgres SQL boilerplate',
     appTagline: 'Best boilerplate ever',
     appDescription: 'This is a great boilerplate.',
     googleAnalyticsId: 'UA-XXXXXXX-X',
