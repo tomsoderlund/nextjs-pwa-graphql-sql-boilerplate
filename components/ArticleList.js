@@ -12,6 +12,8 @@ const useAddArticleForm = () => {
       event.preventDefault()
     }
     await addArticle({ variables: inputs })
+    // Clear input form when done
+    setInputs({ title: '' })
   }
 
   const handleInputChange = (event) => {
