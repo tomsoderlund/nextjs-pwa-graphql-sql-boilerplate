@@ -9,11 +9,11 @@ Router.events.on('routeChangeComplete', path => googlePageview(path))
 
 class MyApp extends App {
   render () {
-    const { Component, pageProps, apolloClient } = this.props
+    const { Component, pageProps, apolloClient, router } = this.props
     return (
       <Container>
         <ApolloHooksProvider client={apolloClient}>
-          <Component {...pageProps} />
+          <Component {...pageProps} query={router.query} />
         </ApolloHooksProvider>
       </Container>
     )
