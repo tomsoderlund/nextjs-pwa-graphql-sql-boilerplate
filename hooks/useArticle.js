@@ -1,12 +1,12 @@
-import { useQuery, useMutation } from 'react-apollo-hooks'
+import { useQuery, useMutation } from '@apollo/react-hooks'
 
-import { GET_ARTICLES, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../graphql/queries/article'
+import { GET_ARTICLES, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../graphql/article/queries'
 
 // Returns: { data, loading, error }
 export const useGetArticles = () => useQuery(GET_ARTICLES)
 
 export const useAddArticle = () => {
-  const addArticleMutation = useMutation(ADD_ARTICLE, {
+  const [addArticleMutation] = useMutation(ADD_ARTICLE, {
     update: (cache, { data: { addArticle } }) => {
       const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({
@@ -21,7 +21,7 @@ export const useAddArticle = () => {
 }
 
 export const useUpdateArticle = () => {
-  const updateArticleMutation = useMutation(UPDATE_ARTICLE, {
+  const [updateArticleMutation] = useMutation(UPDATE_ARTICLE, {
     update: (cache, { data: { updateArticle } }) => {
       const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({
@@ -36,7 +36,7 @@ export const useUpdateArticle = () => {
 }
 
 export const useDeleteArticle = (article) => {
-  const deleteArticleMutation = useMutation(DELETE_ARTICLE, {
+  const [deleteArticleMutation] = useMutation(DELETE_ARTICLE, {
     variables: { id: article.id },
     update: (cache, { data: { deleteArticle } }) => {
       const { articles } = cache.readQuery({ query: GET_ARTICLES })
