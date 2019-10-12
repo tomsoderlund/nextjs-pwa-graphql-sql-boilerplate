@@ -1,23 +1,18 @@
 import React from 'react'
 import Router from 'next/router'
-import App, { Container } from 'next/app'
-import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
+import App from 'next/app'
 import { googlePageview } from '../components/GoogleAnalytics'
-import withApolloClient from '../graphql/with-apollo-client'
+import { withApollo } from '../graphql/apollo'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
 
 class MyApp extends App {
   render () {
-    const { Component, pageProps, apolloClient, router } = this.props
+    const { Component, pageProps, router } = this.props
     return (
-      <Container>
-        <ApolloHooksProvider client={apolloClient}>
-          <Component {...pageProps} query={router.query} />
-        </ApolloHooksProvider>
-      </Container>
+      <Component {...pageProps} query={router.query} />
     )
   }
 }
 
-export default withApolloClient(MyApp)
+export default withApollo(MyApp)

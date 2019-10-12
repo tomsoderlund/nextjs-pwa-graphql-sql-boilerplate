@@ -34,5 +34,5 @@ module.exports.typeDefs = gql`
 
 // Resolvers define the technique for fetching the types in the schema.  We'll retrieve articles from the "articles" array above.
 module.exports.resolvers = {
-  ...require('./resolvers/article')(pool)
+  ...require('./article/resolvers')(pool)
 }
