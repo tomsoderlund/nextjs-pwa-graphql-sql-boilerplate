@@ -7,7 +7,7 @@ const PageHead = ({ title }) => {
     ? `${title} – ${config.appName}`
     : `${config.appName} – ${config.appTagline}`
 
-  const iconUrl = '/static/favicon.png'
+  const iconUrl = '/favicon.png'
   const fontString = 'Source+Sans+Pro:300,400,700'
 
   return <Head>
@@ -18,7 +18,7 @@ const PageHead = ({ title }) => {
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     <link rel='shortcut icon' type='image/x-icon' href={iconUrl} />
     <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${fontString}&display=swap`} />
-    <link rel='stylesheet' href='/static/app.css' />
+    <link rel='stylesheet' href='/app.css' />
 
     <meta property='og:description' content={config.appDescription} />
     <meta property='og:locale' content='en_US' />
