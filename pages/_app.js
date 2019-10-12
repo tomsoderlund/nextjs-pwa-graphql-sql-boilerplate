@@ -1,6 +1,6 @@
 import React from 'react'
 import Router from 'next/router'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import { googlePageview } from '../components/GoogleAnalytics'
 import { withApollo } from '../graphql/apollo'
 
@@ -10,9 +10,7 @@ class MyApp extends App {
   render () {
     const { Component, pageProps, router } = this.props
     return (
-      <Container>
-        <Component {...pageProps} query={router.query} />
-      </Container>
+      <Component {...pageProps} query={router.query} />
     )
   }
 }
