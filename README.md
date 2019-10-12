@@ -71,3 +71,9 @@ Your GraphQL API server is running at `http://localhost:3123/graphql`
 ### Deploying on Zeit Now
 
 (Coming)
+
+
+## How to remove SQL database
+
+1. `graphql/schema.js`: remove `pg`
+2. `graphql/article/resolvers.js`: remove “sql*” references

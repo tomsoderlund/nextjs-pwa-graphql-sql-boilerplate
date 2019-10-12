@@ -3,7 +3,7 @@ const { sql: { sqlFind, sqlCreate, sqlUpdate, sqlDelete } } = require('sql-wizar
 module.exports = (pool) => ({
   Query: {
     async articles (parent, args, context, info) {
-      const rows = sqlFind(pool, 'article', args)
+      const rows = await sqlFind(pool, 'article', args)
       return rows
     },
 
