@@ -1,5 +1,5 @@
 const appSlug = 'nextjs-graphql-hooks-boilerplate'
-const serverPort = process.env.PORT || 3124
+const serverPort = process.env.PORT || 3123
 
 const completeConfig = {
 
