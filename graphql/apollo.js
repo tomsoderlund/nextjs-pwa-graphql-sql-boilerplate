@@ -30,13 +30,10 @@ export function withApollo (PageComponent, { ssr = true } = {}) {
 
   // Set the correct displayName in development
   if (process.env.NODE_ENV !== 'production') {
-    const displayName =
-      PageComponent.displayName || PageComponent.name || 'Component'
-
-    if (displayName === 'App') {
+    const displayName = PageComponent.displayName || PageComponent.name || 'Component'
+    if (displayName.includes('App')) {
       console.warn('This withApollo HOC only works with PageComponents.')
     }
-
     WithApollo.displayName = `withApollo(${displayName})`
   }
 
