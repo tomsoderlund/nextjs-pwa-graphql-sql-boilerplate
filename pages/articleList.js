@@ -17,7 +17,7 @@ function IndexPage ({ query }) {
     <ArticleList />
 
     <h2>Routing</h2>
-    Current page slug: <strong>/{query.slug}</strong> (see server/routes.js)
+    Current page slug: <strong>'{query.slug}'</strong> (see server/routes.js)
     <ul>
       <li><Link route='/'><a>Home</a></Link></li>
       <li><Link route='/articles/other'><a>Other route</a></Link></li>

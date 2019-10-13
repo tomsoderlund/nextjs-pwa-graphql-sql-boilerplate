@@ -1,4 +1,4 @@
-const appSlug = 'nextjs-graphql-hooks-boilerplate'
+const appSlug = 'nextjs-graphql-hooks'
 const serverPort = process.env.PORT || 3123
 
 const completeConfig = {
@@ -6,7 +6,7 @@ const completeConfig = {
   default: {
     serverPort,
     appSlug,
-    appUrl: 'https://nextjs-graphql-hooks.herokuapp.com/',
+    appUrl: `https://${appSlug}.herokuapp.com/`, // Used for GraphQL url - see graphql/apollo.js
     appName: 'Next.js + React Hooks + GraphQL + Postgres SQL boilerplate',
     appTagline: 'Best boilerplate ever',
     appDescription: 'This is a great boilerplate.',
