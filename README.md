@@ -7,6 +7,7 @@ _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-a
 This is a great starting point for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
+* Both front-end client and GraphQL/SQL server in one project.
 * GraphQL API with Apollo.
 * React Hooks for business logic.
 * Flexible client-side routing with `next-routes` (see `server/routes.js`).
