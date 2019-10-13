@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { config } from '../config/config'
+import { withApollo } from '../graphql/apollo'
 
 import { Link } from '../server/routes'
 import PageHead from '../components/PageHead'
@@ -18,10 +19,11 @@ function IndexPage ({ query }) {
     <h2>Routing</h2>
     Current page slug: <strong>/{query.slug}</strong> (see server/routes.js)
     <ul>
+      <li><Link route='/'><a>Home</a></Link></li>
       <li><Link route='/articles/other'><a>Other route</a></Link></li>
     </ul>
 
   </main>
 }
 
-export default IndexPage
+export default withApollo(IndexPage)

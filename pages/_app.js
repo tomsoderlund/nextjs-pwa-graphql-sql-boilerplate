@@ -1,12 +1,12 @@
 import React from 'react'
-import Router from 'next/router'
 import App from 'next/app'
+import Router from 'next/router'
+
 import { googlePageview } from '../components/GoogleAnalytics'
-import { withApollo } from '../graphql/apollo'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
 
-class MyApp extends App {
+export default class MyApp extends App {
   render () {
     const { Component, pageProps, router } = this.props
     return (
@@ -14,5 +14,3 @@ class MyApp extends App {
     )
   }
 }
-
-export default withApollo(MyApp)
