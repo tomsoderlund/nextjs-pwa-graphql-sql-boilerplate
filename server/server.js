@@ -2,7 +2,9 @@ require('dotenv').config()
 
 const bodyParser = require('body-parser')
 const next = require('next')
-const server = require('express')()
+const express = require('express')
+const server = express()
+const path = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -34,6 +36,9 @@ app.prepare().then(() => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
     next()
   })
+
+  // Static assets
+  server.use('/public', express.static(path.join(__dirname, '../public')))
 
   // Next.js page routes
   server.get('*', routerHandler)
