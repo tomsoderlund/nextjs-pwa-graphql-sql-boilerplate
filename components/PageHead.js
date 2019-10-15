@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { config } from '../config/config'
 
-const PageHead = ({ title }) => {
+const PageHead = ({ title, description = config.appDescription }) => {
   const pageTitle = title
     ? `${title} – ${config.appName}`
     : `${config.appName} – ${config.appTagline}`
@@ -12,7 +12,7 @@ const PageHead = ({ title }) => {
 
   return <Head>
     <title>{pageTitle}</title>
-    <meta name='description' content={config.appDescription} />
+    <meta name='description' content={description} />
     <meta charSet='utf-8' />
     <meta httpEquiv='content-language' content='en' />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
@@ -20,14 +20,14 @@ const PageHead = ({ title }) => {
     <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${fontString}&display=swap`} />
     <link rel='stylesheet' href='/app.css' />
 
-    <meta property='og:description' content={config.appDescription} />
+    <meta property='og:description' content={description} />
     <meta property='og:locale' content='en_US' />
     <meta property='og:site_name' content={config.appName} />
     <meta property='og:title' content={pageTitle} />
 
     <meta name='twitter:card' content='summary' />
     <meta name='twitter:creator' content='@Weld_io' />
-    <meta name='twitter:description' content={config.appDescription} />
+    <meta name='twitter:description' content={description} />
     <meta name='twitter:site' content='@Weld_io' />
     <meta name='twitter:title' content={pageTitle} />
 
