@@ -7,7 +7,7 @@ const PageHead = ({ title, description = config.appDescription }) => {
     ? `${title} – ${config.appName}`
     : `${config.appName} – ${config.appTagline}`
 
-  const iconUrl = '/public/favicon.png'
+  const iconUrl = '/public/icon.png'
   const fontString = 'Source+Sans+Pro:300,400,700'
   const locale = 'en_US'
 
