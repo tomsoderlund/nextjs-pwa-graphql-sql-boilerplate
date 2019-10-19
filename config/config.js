@@ -6,17 +6,18 @@ const completeConfig = {
   default: {
     serverPort,
     appSlug,
-    appUrl: `https://${appSlug}.herokuapp.com/`, // Used for GraphQL url - see graphql/apollo.js
-    appName: 'Next.js + React Hooks + GraphQL + Postgres SQL boilerplate',
-    appTagline: 'Best boilerplate ever',
-    appDescription: 'This is a great boilerplate.',
+    appUrl: process.env.APP_URL || `https://${appSlug}.herokuapp.com/`, // Used for GraphQL url - see graphql/apollo.js
+    appName: 'Next.js PWA',
+    appTagline: 'Best web app boilerplate ever',
+    appDescription: 'Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
     databaseUrl: process.env.DATABASE_URL || `postgresql://localhost/${appSlug}`
   },
 
   development: {
-    appUrl: `http://localhost:${serverPort}/`
+    appUrl: `http://localhost:${serverPort}/`,
+    googleAnalyticsId: null
   },
 
   production: {

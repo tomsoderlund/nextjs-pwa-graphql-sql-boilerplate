@@ -1,4 +1,4 @@
-# Next.js + React Hooks + GraphQL (Apollo) + Postgres SQL boilerplate
+# Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate
 
 _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-api-boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [nextjs-express-mongoose-crudify-boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
 
@@ -7,7 +7,9 @@ _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-a
 This is a great starting point for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
+* Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
+* A fast Postgres SQL database server.
 * GraphQL API with Apollo.
 * React Hooks for business logic.
 * Flexible client-side routing with `next-routes` (see `server/routes.js`).
@@ -19,15 +21,17 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-graphql-hooks-boilerplate** running on Heroku here](https://nextjs-graphql-hooks.herokuapp.com/).
+See [**nextjs-pwa-graphql-sql-boilerplate** running on Heroku here](https://nextjs-pwa-graphql-sql.herokuapp.com/).
 
-![nextjs-graphql-hooks-boilerplate demo on Heroku](docs/demo.gif)
+![nextjs-pwa-graphql-sql-boilerplate demo on Heroku](docs/demo.gif)
+
+![nextjs-pwa-graphql-sql-boilerplate demo on phone](demo-mobile_half.png)
 
 ## How to use
 
 Clone this repository:
 
-    git clone https://github.com/tomsoderlund/nextjs-graphql-hooks-boilerplate.git [MY_APP]
+    git clone https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate.git [MY_APP]
 
 Install dependencies:
 
@@ -38,7 +42,7 @@ Install Postgres and set up the database:
 
     psql postgres  # Start the Postgres command-line client
     
-    CREATE DATABASE "nextjs-graphql-hooks-boilerplate";  -- You can also use \connect to connect to existing database
+    CREATE DATABASE "nextjs-pwa-graphql-sql-boilerplate";  -- You can also use \connect to connect to existing database
     CREATE TABLE article (id serial, title varchar(200), content text);  -- Create a blank table
     INSERT INTO article (title) VALUES ('The first article');  -- Add example data
     SELECT * FROM article;  -- Check data exists
