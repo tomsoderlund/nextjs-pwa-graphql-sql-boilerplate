@@ -25,7 +25,7 @@ See [**nextjs-pwa-graphql-sql-boilerplate** running on Heroku here](https://next
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on Heroku](docs/demo.gif)
 
-![nextjs-pwa-graphql-sql-boilerplate demo on phone](demo-mobile_half.png)
+![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo-phone_half.png)
 
 ## How to use
 
