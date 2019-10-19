@@ -1,4 +1,4 @@
-const appSlug = 'nextjs-graphql-hooks'
+const appSlug = 'nextjs-pwa-graphql-sql'
 const serverPort = process.env.PORT || 3123
 
 const completeConfig = {
