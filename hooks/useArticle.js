@@ -7,6 +7,7 @@ export const useGetArticles = () => useQuery(GET_ARTICLES)
 
 export const useGetArticle = (articleSlug) => useQuery(GET_ARTICLE(articleSlug))
 
+// addArticle({ variables })
 export const useAddArticle = () => {
   const [addArticleMutation] = useMutation(ADD_ARTICLE, {
     update: (cache, { data: { addArticle } }) => {
@@ -22,6 +23,7 @@ export const useAddArticle = () => {
   return addArticleMutation
 }
 
+// updateArticle({ variables })
 export const useUpdateArticle = () => {
   const [updateArticleMutation] = useMutation(UPDATE_ARTICLE, {
     update: (cache, { data: { updateArticle } }) => {
@@ -37,9 +39,9 @@ export const useUpdateArticle = () => {
   return updateArticleMutation
 }
 
-export const useDeleteArticle = (article) => {
+// deleteArticle({ variables })
+export const useDeleteArticle = () => {
   const [deleteArticleMutation] = useMutation(DELETE_ARTICLE, {
-    variables: { id: article.id },
     update: (cache, { data: { deleteArticle } }) => {
       const { articles } = cache.readQuery({ query: GET_ARTICLES })
       cache.writeQuery({

@@ -16,7 +16,7 @@ module.exports = `
   # Mutations
   type Mutation {
     addArticle(title: String!): Article!
-    deleteArticle(id: ID!): Article
     updateArticle(id: ID!, title: String): Article
+    deleteArticle(id: ID!): Article
   }
 `
