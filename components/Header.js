@@ -1,10 +1,11 @@
 import React from 'react'
 
+import { config } from '../config/config'
 import { Link } from '../server/routes'
 
 const AppIcon = () => <Link route='/'>
-  <a className='app-icon'>
-    <img src='/public/icon.png' />
+  <a className='app-icon' title={config.appName}>
+    <img src='/public/icon.png' alt={config.appName} />
     <style jsx>{`
       img {
         position: absolute;
