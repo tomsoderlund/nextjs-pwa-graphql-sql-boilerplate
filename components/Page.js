@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 
 import { config } from '../config/config'
-import { withApollo } from '../graphql/apollo'
 
 import PageHead from '../components/PageHead'
 import Header from '../components/Header'
