@@ -24,7 +24,7 @@ export const GET_ARTICLES = gql`
 //   first: 10
 // }
 
-export const GET_ARTICLE_ITEM = articleSlug => {
+export const GET_ARTICLE = articleSlug => {
   const articleId = articleSlug.split('-').pop()
   return gql`
     ${ArticleShortInfo}
