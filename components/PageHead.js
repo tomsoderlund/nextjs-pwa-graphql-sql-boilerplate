@@ -19,6 +19,8 @@ const PageHead = ({ title, description = config.appDescription }) => {
     <meta httpEquiv='content-language' content={locale.split('_')[0]} />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
+    <link rel='manifest' href='/public/manifest.json' />
+
     <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${fontString}&display=swap`} />
     <link rel='stylesheet' href='/public/app.css' />
 
