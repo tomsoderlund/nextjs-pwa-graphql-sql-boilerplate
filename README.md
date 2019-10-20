@@ -19,7 +19,7 @@ _Lightning fast, all JavaScript._
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
 * Unit testing with Jasmine (`yarn unit`).
-* Code formatting and linting with StandardJS (`yarn lint`/`yarn fix`).
+* Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
 
 ## Demo
 
