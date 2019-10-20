@@ -48,20 +48,20 @@ export const ADD_ARTICLE = gql`
   }
 `
 
-export const DELETE_ARTICLE = gql`
-  mutation DeleteArticle ($id: ID!) {
-    deleteArticle (id: $id) {
-      id
-    }
-  }
-`
-
 export const UPDATE_ARTICLE = gql`
   ${ArticleShortInfo}
 
   mutation UpdateArticle ($id: ID!, $title: String) {
     updateArticle (id: $id, title: $title) {
       ...ArticleShortInfo
+    }
+  }
+`
+
+export const DELETE_ARTICLE = gql`
+  mutation DeleteArticle ($id: ID!) {
+    deleteArticle (id: $id) {
+      id
     }
   }
 `
