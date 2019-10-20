@@ -5,14 +5,14 @@ const ArticleShortInfo = `
     id
     title
     content
-    link
     date_published
   }
 `
 
 export const GET_ARTICLES = gql`
   ${ArticleShortInfo}
-  {
+
+  query GetArticles {
     articles (sort: "title asc") {
       ...ArticleShortInfo
     }
@@ -29,10 +29,9 @@ export const GET_ARTICLE = articleSlug => {
   return gql`
     ${ArticleShortInfo}
 
-    {
+    query GetArticle {
       article (id: "${articleId}") {
         ...ArticleShortInfo
-        source_id
       }
     }
   `

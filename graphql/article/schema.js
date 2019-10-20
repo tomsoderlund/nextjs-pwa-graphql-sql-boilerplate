@@ -4,10 +4,7 @@ module.exports = `
     id: ID
     title: String
     content: String
-    link: String
-    guid: String
     date_published: String
-    source_id: Int
   }
 
   # Queries
