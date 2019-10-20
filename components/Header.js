@@ -1,8 +1,27 @@
 import React from 'react'
 
+import { Link } from '../server/routes'
+
+const AppIcon = () => <Link route='/'>
+  <a className='app-icon'>
+    <img src='/public/icon.png' />
+    <style jsx>{`
+      img {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    `}</style>
+  </a>
+</Link>
+
 export default ({ title, children }) => <nav
   className='color-action-secondary-bg color-background-fg'
 >
+  <AppIcon />
   {title}
   {children}
   <style jsx>{`
