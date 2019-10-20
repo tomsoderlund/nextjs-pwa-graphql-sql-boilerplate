@@ -19,6 +19,7 @@ function IndexPage ({ query }) {
     <ul>
       <li><Link route='/'><a>Home</a></Link></li>
       <li><Link route='/articles/other'><a>Other route</a></Link></li>
+      <li><Link route='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'><a>Get the source code for nextjs-pwa-graphql-sql-boilerplate</a></Link></li>
     </ul>
   </Page>
 }
