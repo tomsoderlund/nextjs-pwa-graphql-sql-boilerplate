@@ -12,20 +12,22 @@ _Lightning fast, all JavaScript._
 * A fast Postgres SQL database server.
 * GraphQL API with Apollo.
 * React Hooks for business logic.
+* PWA features such as `manifest.json` and offline support (`next-offline`).
+* `sitemap.xml` and `robots.txt` support.
+* Google Analytics and `google-site-verification` support (see `config/config.js`).
 * Flexible client-side routing with `next-routes` (see `server/routes.js`).
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
-* Testing with Jasmine.
-* Code formatting and linting with StandardJS.
-* sitemap.xml, robots.txt, and Google Analytics support.
+* Unit testing with Jasmine (`yarn unit`).
+* Code formatting and linting with StandardJS (`yarn lint`/`yarn fix`).
 
 ## Demo
 
 See [**nextjs-pwa-graphql-sql-boilerplate** running on Heroku here](https://nextjs-pwa-graphql-sql.herokuapp.com/).
 
-![nextjs-pwa-graphql-sql-boilerplate demo on Heroku](docs/demo.gif)
-
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo-phone_half.png)
+
+![nextjs-pwa-graphql-sql-boilerplate demo on Heroku](docs/demo.gif)
 
 ## How to use
 
