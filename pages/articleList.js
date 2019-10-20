@@ -23,4 +23,4 @@ function IndexPage ({ query }) {
   </Page>
 }
 
-export default IndexPage
+export default withApollo(IndexPage)

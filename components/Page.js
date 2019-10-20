@@ -20,4 +20,4 @@ function Page ({ title, children }) {
   </Fragment>
 }
 
-export default withApollo(Page)
+export default Page
