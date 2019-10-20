@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default ({ title, children }) => <nav>
+export default ({ title, children }) => <nav
+  className='color-action-secondary-bg color-background-fg'
+>
   {title}
   {children}
   <style jsx>{`
@@ -11,9 +13,7 @@ export default ({ title, children }) => <nav>
       left: 0;
       top: 0;
       height: 50px;
-      line-height: 48px;
-      background-color: #663399;
-      color: #FFFFFF;
+      line-height: 50px;
       font-weight: normal;
       text-align: center;
     }
