@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import manifest from '../public/manifest.json'
 import { config } from '../config/config'
 
 const PageHead = ({ title, description = config.appDescription }) => {
@@ -32,7 +33,7 @@ const PageHead = ({ title, description = config.appDescription }) => {
     <meta property='og:locale' content={locale} />
 
     <link rel='apple-touch-icon' href={iconUrl} />
-    <meta name='apple-mobile-web-app-capable' content='yes' />
+    {(manifest.display === 'standalone') ? <meta name='apple-mobile-web-app-capable' content='yes' /> : null}
     <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
     <meta name='apple-mobile-web-app-title' content={config.appName} />
 
