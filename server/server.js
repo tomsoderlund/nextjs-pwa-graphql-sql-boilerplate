@@ -5,6 +5,7 @@ const next = require('next')
 const express = require('express')
 const server = express()
 const path = require('path')
+// const sslRedirect = require('heroku-ssl-redirect') // Enable on Heroku server: yarn add heroku-ssl-redirect
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -24,6 +25,8 @@ const routes = require('./routes')
 const routerHandler = routes.getRequestHandler(app)
 
 app.prepare().then(() => {
+  // Enable SSL/HTTPS redirect
+  // server.use(sslRedirect())
   // Parse application/x-www-form-urlencoded
   server.use(bodyParser.urlencoded({ extended: false }))
   // Parse application/json
