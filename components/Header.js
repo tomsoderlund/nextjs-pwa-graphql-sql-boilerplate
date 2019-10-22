@@ -20,7 +20,7 @@ const AppIcon = () => <Link route='/'>
 </Link>
 
 export default ({ title = config.appName, children }) => <nav
-  className='color-action-secondary-bg color-background-fg'
+  className='color-header-bg color-header-fg'
 >
   <AppIcon />
   {title}

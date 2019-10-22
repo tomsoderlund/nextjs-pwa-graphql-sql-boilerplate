@@ -8,9 +8,11 @@ import Page from '../components/Page'
 import ArticleList from '../components/ArticleList'
 
 function IndexPage ({ query }) {
-  // Note: query contains both /:params (server/routes.js) and ?query=value from url
+  // Note: 'query' contains both /:params (server/routes.js) and ?query=value from url
   return <Page title={'Start page'} >
     <h1>{config.appName}</h1>
+
+    <p><em>{config.appTagline}</em></p>
 
     <ArticleList />
 
@@ -19,8 +21,9 @@ function IndexPage ({ query }) {
     <ul>
       <li><Link route='/'><a>Home</a></Link></li>
       <li><Link route='/articles/other'><a>Other route</a></Link></li>
-      <li><Link route='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'><a>Get the source code for nextjs-pwa-graphql-sql-boilerplate</a></Link></li>
     </ul>
+
+    <p>Get the <a target='_blank' href='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'>source code for nextjs-pwa-graphql-sql-boilerplate</a></p>
   </Page>
 }
 
