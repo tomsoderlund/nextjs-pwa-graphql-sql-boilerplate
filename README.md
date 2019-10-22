@@ -4,7 +4,7 @@ _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-a
 
 ## Why is this awesome?
 
-This is a great starting point for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
+This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
@@ -13,6 +13,7 @@ _Lightning fast, all JavaScript._
 * GraphQL API with Apollo.
 * React Hooks for business logic.
 * PWA features such as `manifest.json` and offline support (`next-offline`).
+* Easy to style the visual theme using CSS (e.g. using [Design Profile Generator](https://tomsoderlund.github.io/design-profile-generator/)).
 * `sitemap.xml` and `robots.txt` support.
 * Google Analytics and `google-site-verification` support (see `config/config.js`).
 * Flexible client-side routing with `next-routes` (see `server/routes.js`).
@@ -44,7 +45,7 @@ Install Postgres and set up the database:
 
     psql postgres  # Start the Postgres command-line client
     
-    CREATE DATABASE "nextjs-pwa-graphql-sql-boilerplate";  -- You can also use \connect to connect to existing database
+    CREATE DATABASE "nextjs-pwa-graphql-sql";  -- You can also use \connect to connect to existing database
     CREATE TABLE article (id serial, title varchar(200), content text);  -- Create a blank table
     INSERT INTO article (title) VALUES ('The first article');  -- Add example data
     SELECT * FROM article;  -- Check data exists
@@ -80,7 +81,7 @@ Your GraphQL API server is running at `http://localhost:3123/graphql`
 (Coming)
 
 
-## How to remove SQL database
+## How to remove/replace SQL database
 
 1. `graphql/schema.js`: remove `pg`
 2. `graphql/article/resolvers.js`: remove “sql*” references
