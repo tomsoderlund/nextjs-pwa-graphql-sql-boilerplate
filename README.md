@@ -1,5 +1,7 @@
 # Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate
 
+![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/github_preview.jpg)
+
 _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-api-boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [nextjs-express-mongoose-crudify-boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
 
 ## Why is this awesome?
@@ -26,7 +28,7 @@ _Lightning fast, all JavaScript._
 
 See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
 
-<img alt="nextjs-pwa-graphql-sql-boilerplate demo on phone" src="docs/demo.jpg" style="max-height: 550px;"/>
+![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
 ## How to use
 
