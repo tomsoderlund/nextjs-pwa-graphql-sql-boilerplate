@@ -9,6 +9,7 @@ const path = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
+const requestHandler = app.getRequestHandler()
 const { config } = require('../config/config')
 
 // Apollo GraphQL
@@ -20,9 +21,6 @@ const apolloServer = new ApolloServer({ typeDefs, resolvers })
 apolloServer.applyMiddleware({ app: server, path: config.graphqlPath })
 
 // Routes
-
-const routes = require('./routes')
-const routerHandler = routes.getRequestHandler(app)
 
 app.prepare().then(() => {
   // Enable SSL/HTTPS redirect
@@ -44,7 +42,7 @@ app.prepare().then(() => {
   server.use('/public', express.static(path.join(__dirname, '../public')))
 
   // Next.js page routes
-  server.get('*', routerHandler)
+  server.all('*', requestHandler)
 
   // Start server
   server.listen(config.serverPort, () => console.log(`${config.appSlug} running on http://localhost:${config.serverPort}/, GraphQL on http://localhost:${config.serverPort}${apolloServer.graphqlPath}`))

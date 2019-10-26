@@ -8,7 +8,7 @@ import Page from '../components/Page'
 import ArticleList from '../components/ArticleList'
 
 function IndexPage ({ query }) {
-  // Note: 'query' contains both /:params (server/routes.js) and ?query=value from url
+  // Note: 'query' contains both /:params and ?query=value from url
   return <Page title={undefined} >
     <h1>{config.appName}</h1>
 
