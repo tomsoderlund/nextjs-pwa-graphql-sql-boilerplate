@@ -12,6 +12,7 @@ const completeConfig = {
     appName: manifest.name,
     appTagline: 'Best web app boilerplate ever',
     appDescription: 'Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate',
+    locale: 'en_US',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
     databaseUrl: process.env.DATABASE_URL || `postgresql://localhost/${appSlug}`,

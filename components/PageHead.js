@@ -10,14 +10,13 @@ const PageHead = ({ title, description = config.appDescription }) => {
 
   const iconUrl = '/icon.png'
   const fontString = 'Source+Sans+Pro:300,400,700'
-  const locale = 'en_US'
 
   return <Head>
     <title>{pageTitle}</title>
     <meta name='description' content={description} />
 
     <meta charSet='utf-8' />
-    <meta httpEquiv='content-language' content={locale.split('_')[0]} />
+    <meta httpEquiv='content-language' content={config.locale.split('_')[0]} />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
     <link rel='manifest' href='/manifest.json' />
@@ -30,7 +29,7 @@ const PageHead = ({ title, description = config.appDescription }) => {
     <meta property='og:site_name' content={config.appName} />
     <meta property='og:title' content={pageTitle} />
     <meta property='og:description' content={description} />
-    <meta property='og:locale' content={locale} />
+    <meta property='og:locale' content={config.locale} />
 
     <link rel='apple-touch-icon' href={iconUrl} />
     {(manifest.display === 'standalone') ? <meta name='apple-mobile-web-app-capable' content='yes' /> : null}

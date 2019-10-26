@@ -6,7 +6,7 @@ import { config } from '../config/config'
 export default class MyDocument extends Document {
   render () {
     return (
-      <html>
+      <html lang={config.locale.split('_')[0]}>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           {config.googleAnalyticsId
