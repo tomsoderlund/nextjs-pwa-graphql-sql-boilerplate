@@ -9,7 +9,7 @@ _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
-* Can be deployed as serverless functions on Zeit Now.
+* **NEW: Can be deployed as serverless functions on Zeit Now.**
 * A fast Postgres SQL database server.
 * GraphQL API with Apollo.
 * React Hooks for business logic.
