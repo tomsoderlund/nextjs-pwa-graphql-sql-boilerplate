@@ -8,7 +8,7 @@ const completeConfig = {
   default: {
     serverPort,
     appSlug,
-    appUrl: process.env.APP_URL, // Used for GraphQL url - see graphql/apollo.js
+    appUrl: process.env.APP_URL || '', // Used for GraphQL url - see graphql/apollo.js. Not used/needed by Zeit Now.
     appName: manifest.name,
     appTagline: 'Best web app boilerplate ever',
     appDescription: 'Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate',
