@@ -9,6 +9,7 @@ _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
+* Can be deployed as serverless functions on Zeit Now.
 * A fast Postgres SQL database server.
 * GraphQL API with Apollo.
 * React Hooks for business logic.
@@ -16,7 +17,6 @@ _Lightning fast, all JavaScript._
 * Easy to style the visual theme using CSS (e.g. using [Design Profile Generator](https://tomsoderlund.github.io/design-profile-generator/)).
 * `sitemap.xml` and `robots.txt` support.
 * Google Analytics and `google-site-verification` support (see `config/config.js`).
-* Flexible client-side routing with `next-routes` (see `server/routes.js`).
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
 * Unit testing with Jasmine (`yarn unit`).
@@ -24,7 +24,7 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-pwa-graphql-sql-boilerplate** running on Heroku here](https://nextjs-pwa-graphql-sql.herokuapp.com/).
+See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo-phone_half.png)
 
@@ -70,20 +70,35 @@ Your GraphQL API server is running at `http://localhost:3123/graphql`
 
 ## Deploying
 
-### Deploying on Heroku
+You can either deploy as a [serverless deployment](https://zeit.co/docs/v2/serverless-functions/introduction/), or as a traditional Express server.
 
-    heroku create [MY_APP]
-    heroku addons:create heroku-postgresql:hobby-dev
-    git push heroku master
+Depending on which deployment you make, some files are unnecessary.
 
-### Deploying on Zeit Now
+### Deploying serverless (on Zeit Now)
 
 Develop with:
 
     now dev --listen 3123
 
-(Coming)
+Deploy to Now with:
 
+	now -e DATABASE_URL=postgres://…
+
+(You could also specify `DATABASE_URL` in a `now.json` file)
+
+Unnecessary files:
+
+- `/server` folder
+
+### Deploying as Express server (on Heroku)
+
+    heroku create [MY_APP]
+    heroku addons:create heroku-postgresql:hobby-dev
+    git push heroku master
+
+Unnecessary files:
+
+- `/api` folder
 
 ## How to remove/replace SQL database
 

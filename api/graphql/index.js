@@ -5,8 +5,6 @@ const { config } = require('../../config/config')
 const { Pool } = require('pg')
 const pool = new Pool({ connectionString: config.databaseUrl })
 
-console.log(`config.databaseUrl:`, config.databaseUrl)
-
 const typeDefs = gql`
   ${require('../../graphql/article/schema')}
 `
