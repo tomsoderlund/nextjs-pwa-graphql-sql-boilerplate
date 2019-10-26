@@ -33,13 +33,15 @@ const usePromptAndDeleteArticle = (article) => {
   return handleDelete
 }
 
+const toSlug = str => str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
+
 const Article = ({ article, index, inProgress = false }) => {
   const promptAndUpdateArticle = usePromptAndUpdateArticle(article, 'title')
   const promptAndDeleteArticle = usePromptAndDeleteArticle(article)
 
   return (
     <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id}`}>
-      <Link href={`/articles/${article.title}-${article.id}`}><a>{article.title}</a></Link>
+      <Link href={`/articles/${toSlug(article.title)}-${article.id}`}><a>{article.title}</a></Link>
       <a className='action update' onClick={promptAndUpdateArticle}>Update</a>
       <a className='action delete' onClick={promptAndDeleteArticle}>Delete</a>
       <style jsx>{`

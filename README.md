@@ -72,7 +72,7 @@ Your GraphQL API server is running at `http://localhost:3123/graphql`
 
 You can either deploy as a [serverless deployment](https://zeit.co/docs/v2/serverless-functions/introduction/), or as a traditional Express server.
 
-Depending on which deployment you make, some files are unnecessary.
+Depending on which deployment you make, some files are unnecessary*.
 
 ### Deploying serverless (on Zeit Now)
 
@@ -86,9 +86,10 @@ Deploy to Now with:
 
 (You could also specify `DATABASE_URL` in a `now.json` file)
 
-Unnecessary files:
+*Unnecessary files:
 
 - `/server` folder
+- `apollo-server-express` module
 
 ### Deploying as Express server (on Heroku)
 
@@ -96,9 +97,10 @@ Unnecessary files:
     heroku addons:create heroku-postgresql:hobby-dev
     git push heroku master
 
-Unnecessary files:
+*Unnecessary files:
 
 - `/api` folder
+- `apollo-server-micro` module
 
 ## How to remove/replace SQL database
 
