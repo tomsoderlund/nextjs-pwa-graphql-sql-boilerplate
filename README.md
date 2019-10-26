@@ -1,8 +1,9 @@
-# Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate
+# Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/github_preview.jpg)
 
 _Note: this is my v3 boilerplate for React web apps. See also [nextjs-sql-rest-api-boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [nextjs-express-mongoose-crudify-boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
+
 
 ## Why is this awesome?
 
@@ -11,9 +12,9 @@ _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
-* **NEW: Can be deployed as serverless functions on Zeit Now.**
+* **NEW: Can be deployed as [serverless functions on Zeit Now](#deploying-serverless-on-zeit-now).**
 * A fast Postgres SQL database server.
-* GraphQL API with Apollo.
+* [GraphQL API](#graphql-client-and-server) with Apollo.
 * React Hooks for business logic.
 * PWA features such as `manifest.json` and offline support (`next-offline`).
 * Easy to style the visual theme using CSS (e.g. using [Design Profile Generator](https://tomsoderlund.github.io/design-profile-generator/)).
@@ -23,6 +24,7 @@ _Lightning fast, all JavaScript._
 * Hot reloading with `nodemon`.
 * Unit testing with Jasmine (`yarn unit`).
 * Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
+
 
 ## Demo
 
@@ -65,7 +67,8 @@ If you navigate to `http://localhost:3123/` you will see a web page with a list 
 
 ### GraphQL client and server
 
-Your GraphQL API server is running at `http://localhost:3123/graphql`
+Your GraphQL API server is running at `http://localhost:3123/api/graphql`.
+[Try the GraphQL playground](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphql) on the demo server.
 
 
 ## Deploying
@@ -101,6 +104,7 @@ Deploy to Now with:
 
 - `/api` folder
 - `apollo-server-micro` module
+
 
 ## How to remove/replace SQL database
 

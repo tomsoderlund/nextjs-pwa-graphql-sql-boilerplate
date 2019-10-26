@@ -1,7 +1,7 @@
 {
   "name": "nextjs-pwa-graphql-sql-boilerplate",
-  "version": "0.2.0",
-  "description": "Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate.",
+  "version": "1.3.0",
+  "description": "Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "MIT",
   "main": "server/server.js",
