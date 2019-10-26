@@ -1,9 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { config } from '../config/config'
 import { withApollo } from '../graphql/apollo'
 
-import { Link } from '../server/routes'
 import Page from '../components/Page'
 import ArticleList from '../components/ArticleList'
 
@@ -17,10 +17,11 @@ function IndexPage ({ query }) {
     <ArticleList />
 
     <h2>Routing</h2>
-    Current page slug: <strong>'{query.slug}'</strong> (see server/routes.js)
+    <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
+
     <ul>
-      <li><Link route='/'><a>Home</a></Link></li>
-      <li><Link route='/articles/other'><a>Other route</a></Link></li>
+      <li><Link href='/'><a>Home</a></Link></li>
+      <li><Link href='/articles/other-1'><a>Other route</a></Link></li>
     </ul>
 
     <p>Get the <a target='_blank' href='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'>source code for nextjs-pwa-graphql-sql-boilerplate</a></p>

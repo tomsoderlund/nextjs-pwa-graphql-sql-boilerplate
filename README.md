@@ -78,6 +78,10 @@ Your GraphQL API server is running at `http://localhost:3123/graphql`
 
 ### Deploying on Zeit Now
 
+Develop with:
+
+    now dev --listen 3123
+
 (Coming)
 
 

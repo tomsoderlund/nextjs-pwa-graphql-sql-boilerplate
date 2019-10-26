@@ -8,7 +8,7 @@ const PageHead = ({ title, description = config.appDescription }) => {
     ? `${title} – ${config.appName}`
     : `${config.appName} – ${config.appTagline}`
 
-  const iconUrl = '/public/icon.png'
+  const iconUrl = '/icon.png'
   const fontString = 'Source+Sans+Pro:300,400,700'
   const locale = 'en_US'
 
@@ -20,10 +20,10 @@ const PageHead = ({ title, description = config.appDescription }) => {
     <meta httpEquiv='content-language' content={locale.split('_')[0]} />
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
-    <link rel='manifest' href='/public/manifest.json' />
+    <link rel='manifest' href='/manifest.json' />
 
     <link rel='stylesheet' href={`https://fonts.googleapis.com/css?family=${fontString}&display=swap`} />
-    <link rel='stylesheet' href='/public/app.css' />
+    <link rel='stylesheet' href='/app.css' />
 
     <link rel='shortcut icon' type='image/x-icon' href={iconUrl} />
 

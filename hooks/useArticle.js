@@ -2,9 +2,10 @@ import { useQuery, useMutation } from '@apollo/react-hooks'
 
 import { GET_ARTICLES, GET_ARTICLE, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../graphql/article/queries'
 
-// Returns: { data, loading, error }
+// { data, loading, error } = useGetArticles()
 export const useGetArticles = () => useQuery(GET_ARTICLES)
 
+// const { data, loading, error } = useGetArticle('slug-1')
 export const useGetArticle = (articleSlug) => useQuery(GET_ARTICLE(articleSlug))
 
 // addArticle({ variables })

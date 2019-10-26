@@ -17,7 +17,7 @@ const { ApolloServer } = require('apollo-server-express')
 const { typeDefs, resolvers } = require('../graphql/schema')
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
-apolloServer.applyMiddleware({ app: server })
+apolloServer.applyMiddleware({ app: server, path: config.graphqlPath })
 
 // Routes
 

@@ -14,7 +14,8 @@ const completeConfig = {
     appDescription: 'Next.js PWA with GraphQL (Apollo) and Postgres SQL boilerplate',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
-    databaseUrl: process.env.DATABASE_URL || `postgresql://localhost/${appSlug}`
+    databaseUrl: process.env.DATABASE_URL || `postgresql://localhost/${appSlug}`,
+    graphqlPath: '/api/graphql'
   },
 
   development: {

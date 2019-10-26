@@ -1,4 +1,4 @@
-// import { Link } from '../server/routes'
+import Link from 'next/link'
 import { useUpdateArticle, useDeleteArticle } from '../hooks/useArticle'
 
 const usePromptAndUpdateArticle = (article, fieldName) => {
@@ -39,7 +39,7 @@ const Article = ({ article, index, inProgress = false }) => {
 
   return (
     <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id}`}>
-      {article.title}
+      <Link href={`/articles/${article.title}-${article.id}`}><a>{article.title}</a></Link>
       <a className='action update' onClick={promptAndUpdateArticle}>Update</a>
       <a className='action delete' onClick={promptAndDeleteArticle}>Delete</a>
       <style jsx>{`
