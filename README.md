@@ -26,7 +26,7 @@ _Lightning fast, all JavaScript._
 
 See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
 
-![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
+<img alt="nextjs-pwa-graphql-sql-boilerplate demo on phone" src="docs/demo.jpg" style="max-height: 550px;"/>
 
 ## How to use
 
