@@ -19,14 +19,14 @@ const AppIcon = () => <Link href='/'>
   </a>
 </Link>
 
-export default ({ title = config.appName, children }) => <nav
-  className='header color-header-bg color-background-fg'
+export default ({ title = config.appName, children }) => <header
+  className='color-header-bg color-background-fg'
 >
   <AppIcon />
   {title}
   {children}
   <style jsx>{`
-    nav {
+    header {
       position: fixed;
       z-index: 1000;
       width: 100%;
@@ -38,4 +38,4 @@ export default ({ title = config.appName, children }) => <nav
       text-align: center;
     }
   `}</style>
-</nav>
+</header>

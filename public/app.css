@@ -4,7 +4,7 @@
 
 /* #NiceAndSimple: Main - margin:auto */
 main {
-  background-color: #FFFFFF; /* content background color, set 'body' background color to match Header/nav. */
+  background-color: #FFFFFF; /* content background color, set 'body' background color to match Header. */
   width: 100%;
   position: absolute;
   top: 50px;
@@ -32,7 +32,7 @@ body {
 }
 
 /* iOS Web Apps */
-.header {
+header {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
