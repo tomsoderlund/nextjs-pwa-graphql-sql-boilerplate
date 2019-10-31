@@ -92,6 +92,7 @@ Deploy to Now with:
 *Unnecessary files:
 
 - `/server` folder
+- `/graphql/schema.js`
 - `apollo-server-express` module
 
 ### Deploying as Express server (on Heroku)
