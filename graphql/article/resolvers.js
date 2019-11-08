@@ -2,33 +2,33 @@ const { sql: { sqlFind, sqlCreate, sqlUpdate, sqlDelete } } = require('sql-wizar
 
 module.exports = (pool) => ({
   Query: {
-    async articles (parent, args, context, info) {
-      const rows = await sqlFind(pool, 'article', args)
+    async articles (parent, variables, context, info) {
+      const rows = await sqlFind(pool, 'article', variables)
       return rows
     },
 
-    async article (parent, args, context, info) {
-      const rows = await sqlFind(pool, 'article', args)
+    async article (parent, variables, context, info) {
+      const rows = await sqlFind(pool, 'article', variables)
       return rows[0]
     }
   },
 
   Mutation: {
-    async addArticle (parent, args, context, info) {
-      const newArticle = await sqlCreate(pool, 'article', args, { findRowByField: 'id' })
+    async addArticle (parent, variables, context, info) {
+      const newArticle = await sqlCreate(pool, 'article', variables, { findRowByField: 'id' })
       return newArticle
     },
 
-    async updateArticle (parent, args, context, info) {
-      const { id, ...values } = args
+    async updateArticle (parent, variables, context, info) {
+      const { id, ...values } = variables
       await sqlUpdate(pool, 'article', { id }, values)
       const rows = await sqlFind(pool, 'article', { id })
       return rows[0]
     },
-    
-    async deleteArticle (parent, args, context, info) {
-      await sqlDelete(pool, 'article', args)
-      return args
+
+    async deleteArticle (parent, variables, context, info) {
+      await sqlDelete(pool, 'article', variables)
+      return variables
     }
   }
 })
