@@ -19,16 +19,16 @@ module.exports = (pool) => ({
       return newArticle
     },
 
-    async deleteArticle (parent, args, context, info) {
-      await sqlDelete(pool, 'article', args)
-      return args
-    },
-
     async updateArticle (parent, args, context, info) {
       const { id, ...values } = args
       await sqlUpdate(pool, 'article', { id }, values)
       const rows = await sqlFind(pool, 'article', { id })
       return rows[0]
+    },
+    
+    async deleteArticle (parent, args, context, info) {
+      await sqlDelete(pool, 'article', args)
+      return args
     }
   }
 })
