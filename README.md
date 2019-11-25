@@ -48,6 +48,7 @@ Install Postgres and set up the database:
     psql postgres  # Start the Postgres command-line client
     
     CREATE DATABASE "nextjs-pwa-graphql-sql";  -- You can also use \connect to connect to existing database
+    \connect "nextjs-pwa-graphql-sql";
     CREATE TABLE article (id serial, title varchar(200), content text);  -- Create a blank table
     INSERT INTO article (title) VALUES ('The first article');  -- Add example data
     SELECT * FROM article;  -- Check data exists
