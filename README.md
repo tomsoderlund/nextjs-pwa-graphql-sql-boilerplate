@@ -91,9 +91,11 @@ Deploy to Now with:
 
 *Unnecessary files:
 
-- `/server` folder
-- `/graphql/schema.js`
 - `apollo-server-express` module
+- `/graphql/schema.js`
+- `/server` folder
+
+(Shortcut: `yarn remove apollo-server-express; rm graphql/schema.js; rm -rf server`)
 
 ### Deploying as Express server (on Heroku)
 
@@ -106,6 +108,7 @@ Deploy to Now with:
 - `/api` folder
 - `apollo-server-micro` module
 
+(Shortcut: `yarn remove apollo-server-micro; rm -rf api`)
 
 ## How to remove/replace SQL database
 
