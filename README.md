@@ -82,7 +82,7 @@ Depending on which deployment you make, some files are unnecessary*.
 
 Develop with:
 
-    now dev --listen 3123
+    now dev --listen 3123  # or: yarn now
 
 Deploy to Now with:
 
