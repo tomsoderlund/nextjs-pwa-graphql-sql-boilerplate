@@ -90,9 +90,7 @@ Develop with:
 
 Deploy to Now with:
 
-	now -e DATABASE_URL=postgres://…
-
-(You could also specify `DATABASE_URL` in a `now.json` file)
+	now  # or: yarn deploy
 
 *Unnecessary files:
 

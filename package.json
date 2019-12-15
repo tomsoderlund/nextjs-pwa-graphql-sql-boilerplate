@@ -11,6 +11,7 @@
     "lint": "standard",
     "fix": "standard --fix",
     "now": "now dev --listen 3123",
+    "deploy": "now --prod",
     "dev": "nodemon -w server -w graphql -w package.json server/server.js",
     "start": "NODE_ENV=production node server/server.js",
     "build": "next build",
