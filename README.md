@@ -38,6 +38,10 @@ Clone this repository:
 
     git clone https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate.git [MY_APP]
 
+Remove the .git folder since you want to create a new repository
+
+    rm -rf .git
+
 Install dependencies:
 
     cd [MY_APP]
