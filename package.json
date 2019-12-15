@@ -42,6 +42,7 @@
     "apollo-server-express": "^2.7.0-alpha.3",
     "apollo-server-micro": "^2.9.7",
     "body-parser": "^1.18.3",
+    "death": "^1.1.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "glob": "^7.1.3",
