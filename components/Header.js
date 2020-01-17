@@ -37,5 +37,9 @@ export default ({ title = config.appName, children }) => <header
       font-weight: normal;
       text-align: center;
     }
+
+    :global(main) {
+      top: 50px;
+    }
   `}</style>
 </header>
