@@ -121,6 +121,8 @@ Deploy to Now with:
 
 Do search/replace for "nextjs-pwa-graphql-sql-boilerplate" AND "nextjs-pwa-graphql-sql" to something else.
 
+Change name in `public/manifest.json`
+
 ### Renaming “Article” to something else
 
 The database item is called “Article”, but you probably want something else in your app.
@@ -149,3 +151,9 @@ Do search/replace for "3123" to something else.
 
 1. `graphql/schema.js`: remove `pg`
 2. `graphql/article/resolvers.js`: remove “sql*” references
+
+### Change visual theme (CSS)
+
+1. Change colors in `public/manifest.json`
+2. Change CSS in `public/app.css`
+3. Change font in `PageHead.js`
