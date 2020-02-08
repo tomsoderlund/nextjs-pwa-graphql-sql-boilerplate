@@ -130,7 +130,7 @@ The database item is called “Article”, but you probably want something else 
 Rename the files:
 
     mv components/ArticleList.js components/{NewName}List.js
-    mv components/ArticleListItem.js components/{NewName}Item.js
+    mv components/ArticleListItem.js components/{NewName}ListItem.js
     mv components/ArticleDetails.js components/{NewName}Details.js
     mkdir graphql/{newName}
     mv graphql/article/queries.js graphql/{newName}/queries.js
