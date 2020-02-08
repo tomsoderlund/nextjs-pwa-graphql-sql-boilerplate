@@ -1,3 +1,4 @@
+const packageJson = require('../package.json')
 const manifest = require('../public/manifest.json')
 
 const appSlug = 'nextjs-pwa-graphql-sql'
@@ -11,7 +12,7 @@ const completeConfig = {
     appUrl: process.env.APP_URL || '', // Used for GraphQL url - see graphql/apollo.js. Not used/needed by Zeit Now.
     appName: manifest.name,
     appTagline: 'Best web app boilerplate ever',
-    appDescription: 'Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate',
+    appDescription: packageJson.description,
     locale: 'en_US',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
