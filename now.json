@@ -1,6 +1,5 @@
 {
   "version":2,
-  "alias": ["nextjs-pwa-graphql-sql-boilerplate"],
   "env":{
     "APP_URL":"https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/",
     "DATABASE_URL":"@nextjs-pwa-graphql-sql-boilerplate_database_url"
