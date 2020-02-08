@@ -115,9 +115,17 @@ Deploy to Now with:
 (Shortcut: `yarn remove apollo-server-micro; rm -rf api`)
 
 
-## Renaming “Article” to something else
+## Modifying the app to your needs
 
-The database item is called “Article”, but you probably want something else in your app, e.g:
+### Change app name
+
+Do search/replace for "nextjs-pwa-graphql-sql-boilerplate" AND "nextjs-pwa-graphql-sql" to something else.
+
+### Renaming “Article” to something else
+
+The database item is called “Article”, but you probably want something else in your app.
+
+1. Rename the files:
 
     mv components/ArticleItem.js components/{NewName}Item.js
     mv components/ArticleList.js components/{NewName}List.js
@@ -131,8 +139,13 @@ The database item is called “Article”, but you probably want something else 
     mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
     rm -r pages/articles
 
+2. Do search/replace inside the files for different casing: article, Article, ARTICLE
 
-## How to remove/replace SQL database
+### Change port number
+
+Do search/replace for "3123" to something else.
+
+### How to remove/replace SQL database
 
 1. `graphql/schema.js`: remove `pg`
 2. `graphql/article/resolvers.js`: remove “sql*” references
