@@ -127,7 +127,7 @@ The database item is called “Article”, but you probably want something else 
     mv graphql/article/schema.js graphql/{newName}/schema.js
     mv hooks/useArticle.js hooks/use{NewName}.js
     mkdir pages/{newName}s
-    mv pages/articles/[article].js pages/{newName}s/[{newName}].js
+    mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
 
 
 ## How to remove/replace SQL database
