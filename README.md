@@ -32,6 +32,7 @@ See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://ne
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
+
 ## How to use
 
 Clone this repository:
@@ -112,6 +113,22 @@ Deploy to Now with:
 - `apollo-server-micro` module
 
 (Shortcut: `yarn remove apollo-server-micro; rm -rf api`)
+
+
+## Renaming “Article” to something else
+
+The database item is called “Article”, but you probably want something else in your app, e.g:
+
+    mv components/ArticleItem.js components/{NewName}Item.js
+    mv components/ArticleList.js components/{NewName}List.js
+    mkdir graphql/{newName}
+    mv graphql/article/queries.js graphql/{newName}/queries.js
+    mv graphql/article/resolvers.js graphql/{newName}/resolvers.js
+    mv graphql/article/schema.js graphql/{newName}/schema.js
+    mv hooks/useArticle.js hooks/use{NewName}.js
+    mkdir pages/{newName}s
+    mv pages/articles/[article].js pages/{newName}s/[{newName}].js
+
 
 ## How to remove/replace SQL database
 
