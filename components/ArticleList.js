@@ -1,15 +1,17 @@
 import React from 'react'
 
 import { useGetArticles, useAddArticle } from '../hooks/useArticle'
-import ArticleItem from './ArticleItem'
+import ArticleListItem from './ArticleListItem'
 
 const useAddArticleForm = () => {
   const [inputs, setInputs] = React.useState({ title: '' })
   const addArticle = useAddArticle()
 
   const handleSubmit = async (event) => {
-    if (event) {
-      event.preventDefault()
+    if (event) event.preventDefault()
+    if (!inputs.title) {
+      window.alert('No title provided')
+      return
     }
     await addArticle({ variables: inputs })
     // Clear input form when done
@@ -33,7 +35,7 @@ const ArticleList = () => {
 
   return (
     <div>
-      {data.articles.map(article => <ArticleItem key={article.id} article={article} />)}
+      {data.articles.map(article => <ArticleListItem key={article.id} article={article} />)}
       <form onSubmit={handleSubmit}>
         <input
           type='text'

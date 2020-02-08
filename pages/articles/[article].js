@@ -6,6 +6,7 @@ import { withApollo } from '../../graphql/apollo'
 import { useGetArticle } from '../../hooks/useArticle'
 
 import Page from '../../components/Page'
+import ArticleDetails from '../../components/ArticleDetails'
 
 function ArticlePage ({ query }) {
   const { data, loading, error } = useGetArticle(query.article)
@@ -14,9 +15,9 @@ function ArticlePage ({ query }) {
   if (loading) return <div>Loading...</div>
 
   return <Page title={data.article.title} >
-    <h1>{data.article.title}</h1>
-
-    <p>{data.article.content}</p>
+    <ArticleDetails
+      article={data.article}
+    />
 
     <h2>Routing</h2>
     <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
