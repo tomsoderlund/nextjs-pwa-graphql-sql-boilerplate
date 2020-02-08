@@ -125,7 +125,7 @@ Do search/replace for "nextjs-pwa-graphql-sql-boilerplate" AND "nextjs-pwa-graph
 
 The database item is called “Article”, but you probably want something else in your app.
 
-1) Rename the files:
+Rename the files:
 
     mv components/ArticleItem.js components/{NewName}Item.js
     mv components/ArticleList.js components/{NewName}List.js
@@ -139,7 +139,7 @@ The database item is called “Article”, but you probably want something else 
     mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
     rm -r pages/articles
 
-2) Do search/replace inside the files for different casing: article, Article, ARTICLE
+Then, do search/replace inside the files for different casing: article, Article, ARTICLE
 
 ### Change port number
 
