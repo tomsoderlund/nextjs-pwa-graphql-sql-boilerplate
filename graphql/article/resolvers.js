@@ -8,7 +8,10 @@ module.exports = (pool) => ({
     },
 
     async article (parent, variables, context, info) {
-      const rows = await sqlFind(pool, 'article', variables)
+      const id = variables.slugAndId
+        ? variables.slugAndId.split('-').pop()
+        : variables.id
+      const rows = await sqlFind(pool, 'article', { id })
       return rows[0]
     }
   },

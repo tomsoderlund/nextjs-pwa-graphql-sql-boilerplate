@@ -24,18 +24,15 @@ export const GET_ARTICLES = gql`
 //   first: 10
 // }
 
-export const GET_ARTICLE = articleSlug => {
-  const articleId = articleSlug.split('-').pop()
-  return gql`
-    ${ArticleShortInfo}
+export const GET_ARTICLE = gql`
+  ${ArticleShortInfo}
 
-    query GetArticle {
-      article (id: "${articleId}") {
-        ...ArticleShortInfo
-      }
+  query GetArticle ($id: ID, $slugAndId: String) {
+    article (id: $id, slugAndId: $slugAndId) {
+      ...ArticleShortInfo
     }
-  `
-}
+  }
+`
 
 export const ADD_ARTICLE = gql`
   ${ArticleShortInfo}

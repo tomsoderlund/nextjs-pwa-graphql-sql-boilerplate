@@ -6,7 +6,7 @@ import { GET_ARTICLES, GET_ARTICLE, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE 
 export const useGetArticles = () => useQuery(GET_ARTICLES)
 
 // const { data, loading, error } = useGetArticle('slug-1')
-export const useGetArticle = (articleSlug) => useQuery(GET_ARTICLE(articleSlug))
+export const useGetArticle = (slugAndId) => useQuery(GET_ARTICLE, { variables: { slugAndId } })
 
 // addArticle({ variables })
 export const useAddArticle = () => {

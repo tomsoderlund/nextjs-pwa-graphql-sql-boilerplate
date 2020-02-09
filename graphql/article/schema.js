@@ -9,8 +9,8 @@ module.exports = `
 
   # Queries
   type Query {
-    articles(title: String, id: ID, sort: String): [Article]
-    article(title: String, id: ID): Article
+    articles(sort: String): [Article]
+    article(id: ID, slugAndId: String): Article
   }
 
   # Mutations
