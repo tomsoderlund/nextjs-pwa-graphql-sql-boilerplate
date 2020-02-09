@@ -129,17 +129,17 @@ The database item is called “Article”, but you probably want something else 
 
 Rename the files:
 
-    mv components/ArticleList.js components/{NewName}List.js
-    mv components/ArticleListItem.js components/{NewName}ListItem.js
-    mv components/ArticleDetails.js components/{NewName}Details.js
     mkdir graphql/{newName}
     mv graphql/article/queries.js graphql/{newName}/queries.js
     mv graphql/article/resolvers.js graphql/{newName}/resolvers.js
     mv graphql/article/schema.js graphql/{newName}/schema.js
     rm -r graphql/article
     mv hooks/useArticle.js hooks/use{NewName}.js
-    mkdir pages/{newName}s
+    mkdir -p pages/{newName}s/_components
     mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
+    mv pages/articles/_components/ArticleList.js pages/{newName}s/_components/{NewName}List.js
+    mv pages/articles/_components/ArticleListItem.js pages/{newName}s/_components/{NewName}ListItem.js
+    mv pages/articles/_components/ArticleDetails.js pages/{newName}s/_components/{NewName}Details.js
     rm -r pages/articles
 
 Then, do search/replace inside the files for different casing: article, Article, ARTICLE

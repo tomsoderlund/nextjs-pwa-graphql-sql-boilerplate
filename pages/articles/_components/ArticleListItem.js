@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useUpdateArticle, useDeleteArticle } from '../hooks/useArticle'
+import { useUpdateArticle, useDeleteArticle } from '../../../hooks/useArticle'
 
 const usePromptAndUpdateArticle = (article, fieldName) => {
   const updateArticle = useUpdateArticle()
