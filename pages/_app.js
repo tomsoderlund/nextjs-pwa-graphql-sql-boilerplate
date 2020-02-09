@@ -11,7 +11,7 @@ export default class MyApp extends App {
   render () {
     const { Component, pageProps, router } = this.props
     return (
-      <Component {...pageProps} query={router.query} />
+      <Component {...pageProps} {...router} />
     )
   }
 }
