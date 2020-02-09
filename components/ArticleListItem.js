@@ -35,7 +35,7 @@ const usePromptAndDeleteArticle = (article) => {
 
 const toSlug = str => str && str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
 
-const Article = ({ article, index, inProgress = false }) => {
+const ArticleListItem = ({ article, index, inProgress = false }) => {
   const promptAndUpdateArticle = usePromptAndUpdateArticle(article, 'title')
   const promptAndDeleteArticle = usePromptAndDeleteArticle(article)
 
@@ -65,4 +65,4 @@ const Article = ({ article, index, inProgress = false }) => {
     </div>
   )
 }
-export default Article
+export default ArticleListItem
