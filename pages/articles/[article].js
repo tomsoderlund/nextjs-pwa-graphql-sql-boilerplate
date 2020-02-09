@@ -6,7 +6,7 @@ import { withApollo } from '../../graphql/apollo'
 import { useGetArticle } from '../../hooks/useArticle'
 
 import Page from '../../components/Page'
-import ArticleDetails from './_components/ArticleDetails'
+import ArticleDetails from '../../components/articles/ArticleDetails'
 
 function ArticlePage ({ query }) {
   const { data, loading, error } = useGetArticle(query.article)

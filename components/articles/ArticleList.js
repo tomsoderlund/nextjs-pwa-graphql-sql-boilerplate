@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useGetArticles, useAddArticle } from '../../../hooks/useArticle'
+import { useGetArticles, useAddArticle } from '../../hooks/useArticle'
 import ArticleListItem from './ArticleListItem'
 
 const useAddArticleForm = () => {

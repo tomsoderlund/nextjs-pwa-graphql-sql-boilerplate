@@ -5,7 +5,7 @@ import { config } from '../config/config'
 import { withApollo } from '../graphql/apollo'
 
 import Page from '../components/Page'
-import ArticleList from './articles/_components/ArticleList'
+import ArticleList from '../components/articles/ArticleList'
 
 function IndexPage ({ query }) {
   // Note: 'query' contains both /:params and ?query=value from url
