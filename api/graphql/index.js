@@ -1,4 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server-micro')
+const { ApolloServer } = require('apollo-server-micro')
+const { mergeTypes, mergeResolvers } = require('merge-graphql-schemas')
+
 const { config } = require('../../config/config')
 
 // Postgres (pg)
@@ -16,13 +18,13 @@ onProcessDeath((signal, err) => {
   client && client.release()
 })
 
-const typeDefs = gql`
-  ${require('../../graphql/article/schema')}
-`
+const typeDefs = mergeTypes([
+  require('../../graphql/article/schema')
+])
 
-const resolvers = {
-  ...require('../../graphql/article/resolvers')(pool)
-}
+const resolvers = mergeResolvers([
+  require('../../graphql/article/resolvers')(pool)
+])
 
 const server = new ApolloServer({
   typeDefs,
