@@ -59,10 +59,11 @@ Install Postgres and set up the database:
     SELECT * FROM article;  -- Check data exists
     \q
 
+Configure the `.env` file.
+
 Start it by doing the following:
 
-    export DATABASE_URL=[your Postgres URL]  # Or use a .env file
-    yarn dev
+    yarn dev  # or 'yarn now' to run with Zeit Now serverless
 
 In production:
 
@@ -96,10 +97,9 @@ Deploy to Now with:
 *Unnecessary files:
 
 - `apollo-server-express` module
-- `/graphql/schema.js`
 - `/server` folder
 
-(Shortcut: `yarn remove apollo-server-express; rm graphql/schema.js; rm -rf server`)
+(Shortcut: `yarn remove apollo-server-express; rm -rf server`)
 
 ### Deploying as Express server (on Heroku)
 
@@ -135,11 +135,12 @@ Rename the files:
     mv graphql/article/schema.js graphql/{newName}/schema.js
     rm -r graphql/article
     mv hooks/useArticle.js hooks/use{NewName}.js
-    mkdir -p pages/{newName}s/_components
+    mkdir -p components/{newName}s
+    mv components/articles/ArticleList.js components/{newName}s/{NewName}List.js
+    mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js
+    mv components/articles/ArticleDetails.js components/{newName}s/{NewName}Details.js
+    rm -r components/articles
     mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
-    mv pages/articles/_components/ArticleList.js pages/{newName}s/_components/{NewName}List.js
-    mv pages/articles/_components/ArticleListItem.js pages/{newName}s/_components/{NewName}ListItem.js
-    mv pages/articles/_components/ArticleDetails.js pages/{newName}s/_components/{NewName}Details.js
     rm -r pages/articles
 
 Then, do search/replace inside the files for different casing: article, Article, ARTICLE
@@ -150,7 +151,7 @@ Do search/replace for "3123" to something else.
 
 ### How to remove/replace SQL database
 
-1. `graphql/schema.js`: remove `pg`
+1. Remove references to `graphql/postgres.js`
 2. `graphql/article/resolvers.js`: remove “sql*” references
 
 ### Change visual theme (CSS)

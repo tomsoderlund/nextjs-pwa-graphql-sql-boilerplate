@@ -1,6 +1,6 @@
 {
   "name": "nextjs-pwa-graphql-sql-boilerplate",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate.",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "unit": "jasmine",
     "lint": "standard",
     "fix": "standard --fix",
-    "now": "now dev --listen 3123",
+    "dev": "echo 'Running as Express server'; nodemon -w server -w graphql -w package.json server/server.js",
+    "now": "echo 'Running as Zeit Now serverless'; now dev --listen 3123",
     "deploy": "now --prod",
-    "dev": "nodemon -w server -w graphql -w package.json server/server.js",
     "start": "NODE_ENV=production node server/server.js",
     "build": "next build",
     "heroku-postbuild": "next build"
