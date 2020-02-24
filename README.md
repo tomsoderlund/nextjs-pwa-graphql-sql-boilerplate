@@ -86,13 +86,13 @@ Depending on which deployment you make, some files are unnecessary*.
 
 ### Deploying serverless (on Zeit Now)
 
-Develop with:
+Run in development mode with:
 
-    now dev --listen 3123  # or: yarn now
+    yarn now
 
 Deploy to Now with:
 
-	now  # or: yarn deploy
+	yarn deploy
 
 *Unnecessary files:
 
