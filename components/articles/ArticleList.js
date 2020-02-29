@@ -35,7 +35,7 @@ const ArticleList = () => {
 
   return (
     <div>
-      {data.articles.map(article => <ArticleListItem key={article.id} article={article} />)}
+      {data.articles && data.articles.map(article => <ArticleListItem key={article.id} article={article} />)}
       <form onSubmit={handleSubmit}>
         <input
           type='text'
