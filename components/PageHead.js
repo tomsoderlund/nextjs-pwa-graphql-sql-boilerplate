@@ -19,7 +19,7 @@ const PageHead = ({ title, description = config.appDescription }) => {
 
     <meta charSet='utf-8' />
     <meta httpEquiv='content-language' content={config.locale.split('_')[0]} />
-    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
     <link rel='manifest' href='/manifest.json' />
 
