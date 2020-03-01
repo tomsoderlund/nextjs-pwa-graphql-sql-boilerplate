@@ -106,7 +106,7 @@ button:disabled {
   background-color: silver;
 }
 
-button.primary {
+button.primary:not(:disabled) {
   background-color: #00CED1;
 }
 
