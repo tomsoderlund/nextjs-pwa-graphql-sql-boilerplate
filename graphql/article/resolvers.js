@@ -18,7 +18,7 @@ module.exports = (pool) => ({
 
   Mutation: {
     async addArticle (parent, variables, context, info) {
-      const newArticle = await sqlCreate(pool, 'article', variables, { findRowByField: 'id' })
+      const newArticle = await sqlCreate(pool, 'article', variables)
       return newArticle
     },
 
