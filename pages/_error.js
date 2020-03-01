@@ -1,3 +1,5 @@
+// _error.js is only used in production. In development you'll get an error with the call stack to know where the error originated from.
+
 import React from 'react'
 
 const Error = ({ statusCode }) => (
