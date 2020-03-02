@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import ErrorPage from 'next/error'
 
 import { withApollo } from '../../graphql/apollo'
 import { useGetArticle } from '../../hooks/useArticle'
@@ -11,7 +10,7 @@ import ArticleDetails from '../../components/articles/ArticleDetails'
 function ArticlePage ({ query }) {
   const { data, loading, error } = useGetArticle(query.article)
 
-  if (error || (data && !data.article)) return <ErrorPage />
+  if (error || (data && !data.article)) throw error
 
   return <Page
     title={loading ? 'Loading...' : data.article.title}
