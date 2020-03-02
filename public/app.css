@@ -19,6 +19,7 @@ main {
 }
 
 section.content {
+  padding: 1em 0;
   width: calc(100% - 2em);
   max-width: 600px;
   margin: 0 auto;
