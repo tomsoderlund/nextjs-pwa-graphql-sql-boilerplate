@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+}
+
 /* #NiceAndSimple: Main - margin:auto */
 main {
   background-color: #FFFFFF; /* content background color, set 'body' background color to match Header. */
