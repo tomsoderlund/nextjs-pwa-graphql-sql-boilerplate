@@ -19,7 +19,7 @@ main {
 }
 
 section.content {
-  width: calc(100% - 1em);
+  width: calc(100% - 2em);
   max-width: 600px;
   margin: 0 auto;
 }
