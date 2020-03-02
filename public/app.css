@@ -84,6 +84,7 @@ button {
   display: inline-block;
   cursor: pointer;
   user-select: none;
+  -webkit-user-select: none;
   font-family: inherit;
   font-size: inherit;
   line-height: normal;
