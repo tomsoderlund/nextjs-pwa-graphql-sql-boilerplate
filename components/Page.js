@@ -5,9 +5,13 @@ import { config } from '../config/config'
 import PageHead from '../components/PageHead'
 import Header from '../components/Header'
 
-function Page ({ title, children }) {
+function Page ({ title, description, children }) {
   return <Fragment>
-    <PageHead title={title} />
+    <PageHead
+      title={title}
+      description={description}
+    />
+
     <Header title={config.appName} />
 
     <main>
