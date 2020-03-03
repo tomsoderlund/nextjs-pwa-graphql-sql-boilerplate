@@ -7,9 +7,12 @@ import { withApollo } from '../graphql/apollo'
 import Page from '../components/Page'
 import ArticleList from '../components/articles/ArticleList'
 
-function IndexPage ({ query }) {
+function IndexPage ({ query, asPath }) {
   // Note: 'query' contains both /:params and ?query=value from url
-  return <Page title={undefined} >
+  return <Page
+    title={undefined}
+    path={asPath}
+  >
     <h1>{config.appName}</h1>
 
     <p><em>{config.appTagline}</em></p>

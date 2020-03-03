@@ -3,11 +3,12 @@ import Head from 'next/head'
 import manifest from '../public/manifest.json'
 import { config } from '../config/config'
 
-const PageHead = ({ title, description = config.appDescription }) => {
+const PageHead = ({ title, description = config.appDescription, path = '/' }) => {
   const pageTitle = title
     ? `${title} – ${config.appName}`
     : `${config.appName} – ${config.appTagline}`
 
+  // const thumbnailUrl = `https://screens.myserver.com/?url=${config.appUrl}${path.slice(1)}`
   const iconUrl = '/icon.png'
   const fonts = [
     ['Source Sans Pro', '300,400,700']
@@ -39,16 +40,10 @@ const PageHead = ({ title, description = config.appDescription }) => {
     <meta name='apple-mobile-web-app-title' content={config.appName} />
 
     {/*
+      <meta property='og:image' content={thumbnailUrl} />
       <link rel='apple-touch-startup-image' href='' />
-
-      <meta name='twitter:card' content='summary' />
-      <meta name='twitter:creator' content='@TwitterName' />
-      <meta name='twitter:site' content='@TwitterName' />
-
       <link rel='canonical' href={websiteUrl} />
       <meta property='og:url' content={websiteUrl} />
-
-      <meta property='og:image' content={thumbnailUrl} />
     */}
 
     {config.googleSiteVerification ? <meta name='google-site-verification' content={config.googleSiteVerification} /> : null}
