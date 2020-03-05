@@ -1,3 +1,4 @@
+// Client-side
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
 import {

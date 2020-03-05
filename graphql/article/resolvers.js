@@ -1,3 +1,4 @@
+// Server-side
 const { sql: { sqlFind, sqlCreate, sqlUpdate, sqlDelete } } = require('sql-wizard')
 
 module.exports = (pool) => ({

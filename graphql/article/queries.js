@@ -1,3 +1,4 @@
+// Client-side
 import gql from 'graphql-tag'
 
 const ArticleShortInfo = `

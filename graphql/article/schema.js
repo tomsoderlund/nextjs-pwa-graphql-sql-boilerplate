@@ -1,3 +1,4 @@
+// Server-side
 module.exports = `
   # This "Article" type can be used in other type declarations
   type Article {
