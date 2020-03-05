@@ -50,5 +50,5 @@ app.prepare().then(() => {
   server.all('*', requestHandler)
 
   // Start server
-  server.listen(config.serverPort, () => console.log(`${config.appSlug} running on http://localhost:${config.serverPort}/, GraphQL on http://localhost:${config.serverPort}${apolloServer.graphqlPath}`))
+  server.listen(config.serverPort, () => console.log(`[${new Date().getHours()}:${new Date().getMinutes()}] ${config.appSlug} running on http://localhost:${config.serverPort}/, GraphQL on http://localhost:${config.serverPort}${apolloServer.graphqlPath}`))
 })
