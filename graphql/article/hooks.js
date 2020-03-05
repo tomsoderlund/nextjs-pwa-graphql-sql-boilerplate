@@ -1,6 +1,12 @@
 import { useQuery, useMutation } from '@apollo/react-hooks'
 
-import { GET_ARTICLES, GET_ARTICLE, ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from '../graphql/article/queries'
+import {
+  GET_ARTICLES,
+  GET_ARTICLE,
+  ADD_ARTICLE,
+  UPDATE_ARTICLE,
+  DELETE_ARTICLE
+} from './queries'
 
 // { data, loading, error } = useGetArticles()
 export const useGetArticles = () => useQuery(GET_ARTICLES)

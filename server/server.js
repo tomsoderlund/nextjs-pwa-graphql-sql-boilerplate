@@ -14,7 +14,7 @@ const { config } = require('../config/config')
 
 // Apollo GraphQL
 const { ApolloServer } = require('apollo-server-express')
-const { typeDefs, resolvers } = require('../graphql/schema')
+const { typeDefs, resolvers } = require('../graphql/index')
 const { query } = require('../graphql/postgres')
 
 const apolloServer = new ApolloServer({

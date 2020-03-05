@@ -130,11 +130,11 @@ The database item is called “Article”, but you probably want something else 
 Rename the files:
 
     mkdir graphql/{newName}
+    mv graphql/article/hooks.js graphql/{newName}/hooks.js
     mv graphql/article/queries.js graphql/{newName}/queries.js
     mv graphql/article/resolvers.js graphql/{newName}/resolvers.js
     mv graphql/article/schema.js graphql/{newName}/schema.js
     rm -r graphql/article
-    mv hooks/useArticle.js hooks/use{NewName}.js
     mkdir -p components/{newName}s
     mv components/articles/ArticleList.js components/{newName}s/{NewName}List.js
     mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { withApollo } from '../../graphql/apollo'
-import { useGetArticle } from '../../hooks/useArticle'
+import { useGetArticle } from '../../graphql/article/hooks'
 
 import Page from '../../components/Page'
 import ArticleDetails from '../../components/articles/ArticleDetails'

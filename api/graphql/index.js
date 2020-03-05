@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server-micro')
 
-const { typeDefs, resolvers } = require('../../graphql/schema')
+const { typeDefs, resolvers } = require('../../graphql/index')
 const { query } = require('../../graphql/postgres')
 const { config } = require('../../config/config')
 

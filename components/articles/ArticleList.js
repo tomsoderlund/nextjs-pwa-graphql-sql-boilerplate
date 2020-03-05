@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useGetArticles, useAddArticle } from '../../hooks/useArticle'
+import { useGetArticles, useAddArticle } from '../../graphql/article/hooks'
 import ArticleListItem from './ArticleListItem'
 
 const useAddArticleForm = () => {
