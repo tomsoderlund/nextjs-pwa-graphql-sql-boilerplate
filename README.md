@@ -140,6 +140,7 @@ Rename the files:
     mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js
     mv components/articles/ArticleDetails.js components/{newName}s/{NewName}Details.js
     rm -r components/articles
+    mkdir pages/{newName}s
     mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
     rm -r pages/articles
 
