@@ -16,7 +16,7 @@ const completeConfig = {
     locale: 'en_US',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
-    databaseUrl: process.env.DATABASE_URL || `postgresql://localhost/${appSlug}`,
+    databaseUrl: process.env.DATABASE_URL,
     graphqlPath: '/api/graphql'
   },
 
