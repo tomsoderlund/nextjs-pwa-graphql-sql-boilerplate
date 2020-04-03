@@ -19,9 +19,11 @@ export const useGetArticle = (slugAndId) => useQuery(GET_ARTICLE, { variables: {
 export const useAddArticle = () => {
   const [addArticleMutation] = useMutation(ADD_ARTICLE, {
     update: (cache, { data: { addArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_ARTICLES })
+      const { variables } = cache.watches.values().next().value
+      const { articles } = cache.readQuery({ query: GET_ARTICLES, variables })
       cache.writeQuery({
         query: GET_ARTICLES,
+        variables,
         data: {
           articles: [...articles, addArticle]
         }
@@ -35,9 +37,11 @@ export const useAddArticle = () => {
 export const useUpdateArticle = () => {
   const [updateArticleMutation] = useMutation(UPDATE_ARTICLE, {
     update: (cache, { data: { updateArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_ARTICLES })
+      const { variables } = cache.watches.values().next().value
+      const { articles } = cache.readQuery({ query: GET_ARTICLES, variables })
       cache.writeQuery({
         query: GET_ARTICLES,
+        variables,
         data: {
           articles: articles.map(articleItem => articleItem.id !== updateArticle.id ? articleItem : updateArticle)
         }
@@ -51,9 +55,11 @@ export const useUpdateArticle = () => {
 export const useDeleteArticle = () => {
   const [deleteArticleMutation] = useMutation(DELETE_ARTICLE, {
     update: (cache, { data: { deleteArticle } }) => {
-      const { articles } = cache.readQuery({ query: GET_ARTICLES })
+      const { variables } = cache.watches.values().next().value
+      const { articles } = cache.readQuery({ query: GET_ARTICLES, variables })
       cache.writeQuery({
         query: GET_ARTICLES,
+        variables,
         data: {
           articles: articles.filter(articleItem => articleItem.id !== deleteArticle.id)
         }
