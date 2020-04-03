@@ -7,7 +7,7 @@ import { withApollo } from '../graphql/apollo'
 import Page from '../components/Page'
 import ArticleList from '../components/articles/ArticleList'
 
-function IndexPage ({ query, asPath }) {
+function StartPage ({ query, asPath }) {
   // Note: 'query' contains both /:params and ?query=value from url
   return <Page
     title={undefined}
@@ -31,4 +31,4 @@ function IndexPage ({ query, asPath }) {
   </Page>
 }
 
-export default withApollo(IndexPage)
+export default withApollo(StartPage)
