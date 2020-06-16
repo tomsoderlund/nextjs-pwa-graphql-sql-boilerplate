@@ -152,7 +152,7 @@ Do search/replace for "3123" to something else.
 
 ### How to remove/replace SQL database
 
-1. Remove references to `graphql/postgres.js`
+1. Remove references to `graphql/postgres`
 2. `graphql/article/resolvers.js`: remove “sql*” references
 
 ### Change visual theme (CSS)
