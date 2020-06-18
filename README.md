@@ -146,6 +146,10 @@ Rename the files:
 
 Then, do search/replace inside the files for different casing: article, Article, ARTICLE
 
+### Create a new data model/object type
+
+    yarn model  # Creates a new folder graphql/newObject with 4 empty JS files inside
+
 ### Change port number
 
 Do search/replace for "3123" to something else.

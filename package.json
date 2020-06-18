@@ -15,7 +15,8 @@
     "deploy": "now --prod",
     "start": "NODE_ENV=production node server/server.js",
     "build": "next build",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "next build",
+    "model": "mkdir graphql/newObject; touch graphql/newObject/{hooks,queries,resolvers,schema}.js"
   },
   "standard": {
     "parser": "babel-eslint",
