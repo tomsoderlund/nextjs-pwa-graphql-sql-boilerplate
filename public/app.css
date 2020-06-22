@@ -392,6 +392,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+header,
+footer {
+  background-color: #663399;
+}
+
 button,
 .button {
   background-color: #00CED1;
