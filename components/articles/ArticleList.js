@@ -34,8 +34,14 @@ const ArticleList = () => {
   if (error) return `Error! ${error.message}`
 
   return (
-    <div>
-      {data.articles && data.articles.map(article => <ArticleListItem key={article.id} article={article} />)}
+    <>
+      {data.articles && data.articles.map(article => (
+        <ArticleListItem
+          key={article.id}
+          article={article}
+        />
+      ))}
+
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -51,7 +57,7 @@ const ArticleList = () => {
           }
         `}</style>
       </form>
-    </div>
+    </>
   )
 }
 export default ArticleList
