@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { config } from '../config/config'
 
@@ -6,7 +6,7 @@ import PageHead from '../components/PageHead'
 import Header from '../components/Header'
 
 function Page ({ title, description, path, children }) {
-  return <Fragment>
+  return <>
     <PageHead
       title={title}
       description={description}
@@ -16,12 +16,10 @@ function Page ({ title, description, path, children }) {
     <Header title={config.appName} />
 
     <main>
-      <section className='content'>
-        {children}
-      </section>
+      {children}
     </main>
 
-  </Fragment>
+  </>
 }
 
 export default Page

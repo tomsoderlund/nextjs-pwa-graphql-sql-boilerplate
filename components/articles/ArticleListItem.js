@@ -50,6 +50,7 @@ const ArticleListItem = ({ article, index, inProgress = false }) => {
           cursor: pointer;
           font-size: 0.6em;
           text-transform: uppercase;
+          border-bottom: none;
         }
         a.update {
           color: lime;

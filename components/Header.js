@@ -7,6 +7,10 @@ const AppIcon = () => <Link href='/'>
   <a className='app-icon' title={config.appName}>
     <img src='/icon.png' alt={config.appName} />
     <style jsx>{`
+      a:hover {
+        filter: none;
+      }
+
       img {
         position: absolute;
         left: 10px;
@@ -39,7 +43,7 @@ export default ({ title = config.appName, children }) => <header
     }
 
     :global(main) {
-      top: 50px;
+      margin-top: 50px;
     }
   `}</style>
 </header>
