@@ -10,8 +10,8 @@ export default class MyDocument extends Document {
       <html lang={config.locale.split('_')[0]}>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          {config.googleAnalyticsId
-            ? <>
+          {config.googleAnalyticsId ? (
+            <>
               <script async src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsId}`} />
               <script
                 dangerouslySetInnerHTML={{
@@ -21,7 +21,8 @@ export default class MyDocument extends Document {
   gtag('config', '${config.googleAnalyticsId}');`
                 }}
               />
-          </> : null}
+            </>
+          ) : null}
         </Head>
         <body>
           <Main />
