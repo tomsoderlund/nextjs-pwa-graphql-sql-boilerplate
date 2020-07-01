@@ -3,7 +3,7 @@
   "description": "Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL",
   "version": "1.5.0",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
-  "license": "MIT",
+  "license": "ISC",
   "main": "server/server.js",
   "scripts": {
     "test": "echo 'Running Standard.js and Jasmine unit tests...\n' && yarn lint && yarn unit",
