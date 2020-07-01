@@ -70,11 +70,11 @@ In production:
     yarn build
     yarn start
 
-If you navigate to `http://localhost:3123/` you will see a web page with a list of articles (or an empty list if you haven’t added one).
+If you navigate to `http://localhost:3003/` you will see a web page with a list of articles (or an empty list if you haven’t added one).
 
 ### GraphQL client and server
 
-Your GraphQL API server is running at `http://localhost:3123/api/graphql`.
+Your GraphQL API server is running at `http://localhost:3003/api/graphql`.
 [Try the GraphQL playground](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphql) on the demo server.
 
 
@@ -152,7 +152,7 @@ Then, do search/replace inside the files for different casing: article, Article,
 
 ### Change port number
 
-Do search/replace for "3123" to something else.
+Do search/replace for "3003" to something else.
 
 ### How to remove/replace SQL database
 

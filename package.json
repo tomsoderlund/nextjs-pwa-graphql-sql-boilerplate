@@ -11,7 +11,7 @@
     "lint": "standard",
     "fix": "standard --fix",
     "dev": "echo 'Running as Express server'; nodemon -w server -w graphql -w package.json server/server.js",
-    "now": "echo 'Running as Zeit Now serverless'; now dev --listen 3123",
+    "now": "echo 'Running as Zeit Now serverless'; now dev --listen 3003",
     "deploy": "now --prod",
     "start": "NODE_ENV=production node server/server.js",
     "build": "next build",

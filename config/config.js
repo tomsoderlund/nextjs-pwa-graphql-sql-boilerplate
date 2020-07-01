@@ -2,7 +2,7 @@ const packageJson = require('../package.json')
 const manifest = require('../public/manifest.json')
 
 const appSlug = 'nextjs-pwa-graphql-sql'
-const serverPort = process.env.PORT || 3123
+const serverPort = process.env.PORT || 3003
 
 const completeConfig = {
 
