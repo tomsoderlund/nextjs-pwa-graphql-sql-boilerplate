@@ -12,23 +12,25 @@ function ArticlePage ({ query, asPath }) {
 
   if (error || (data && !data.article)) throw error
 
-  return <Page
-    title={loading ? 'Loading...' : data.article.title}
-    path={asPath}
-  >
-    {loading ? <div>Loading...</div> : (
-      <ArticleDetails
-        article={data.article}
-      />
-    )}
+  return (
+    <Page
+      title={loading ? 'Loading...' : data.article.title}
+      path={asPath}
+    >
+      {loading ? <div>Loading...</div> : (
+        <ArticleDetails
+          article={data.article}
+        />
+      )}
 
-    <h2>Routing</h2>
-    <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
+      <h2>Routing</h2>
+      <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
 
-    <ul>
-      <li><Link href='/'><a>Home</a></Link></li>
-    </ul>
-  </Page>
+      <ul>
+        <li><Link href='/'><a>Home</a></Link></li>
+      </ul>
+    </Page>
+  )
 }
 
 export default withApollo(ArticlePage)

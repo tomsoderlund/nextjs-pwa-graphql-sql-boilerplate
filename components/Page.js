@@ -6,20 +6,21 @@ import PageHead from '../components/PageHead'
 import Header from '../components/Header'
 
 function Page ({ title, description, path, children }) {
-  return <>
-    <PageHead
-      title={title}
-      description={description}
-      path={path}
-    />
+  return (
+    <>
+      <PageHead
+        title={title}
+        description={description}
+        path={path}
+      />
 
-    <Header title={config.appName} />
+      <Header title={config.appName} />
 
-    <main>
-      {children}
-    </main>
-
-  </>
+      <main>
+        {children}
+      </main>
+    </>
+  )
 }
 
 export default Page
