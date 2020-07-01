@@ -46,6 +46,9 @@ app.prepare().then(() => {
   // Static assets
   server.use('/public', express.static(path.join(__dirname, '../public')))
 
+  // Manually set up API routes if not running Zeit Now
+  // server.get('/api/myCustomAPI', require('../api/myCustomAPI'))
+
   // Next.js page routes
   server.all('*', requestHandler)
 
