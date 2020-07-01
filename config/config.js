@@ -11,8 +11,8 @@ const completeConfig = {
     appSlug,
     appUrl: process.env.APP_URL || '', // Used for GraphQL url - see graphql/apollo.js. Not used/needed by Zeit Now.
     appName: manifest.name,
-    appTagline: 'Best web app boilerplate ever',
-    appDescription: packageJson.description,
+    appTagline: manifest.description,
+    appDescription: manifest.description,
     locale: 'en_US',
     googleAnalyticsId: 'UA-XXXXXXX-X',
     googleSiteVerification: false,
