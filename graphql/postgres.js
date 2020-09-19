@@ -8,9 +8,9 @@ const pool = new Pool({ connectionString: config.databaseUrl })
 // Connect to database, do query, then release database connection
 module.exports.query = async (sqlString) => {
   try {
-    // const client = await pool.connect()
-    const results = await pool.query(sqlString)
-    // client.release()
+    const client = await pool.connect()
+    const results = await client.query(sqlString)
+    await client.release()
     return results
   } catch (error) {
     return { error }
