@@ -10,6 +10,7 @@ module.exports.query = async (sqlString) => {
   try {
     const client = await pool.connect()
     const results = await client.query(sqlString)
+    await client.end()
     await client.release()
     return results
   } catch (error) {
