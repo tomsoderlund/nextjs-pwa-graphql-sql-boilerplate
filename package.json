@@ -5,7 +5,7 @@
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
   "scripts": {
-    "dev": "yarn api-types:watch & yarn dev:next",
+    "dev": "bun run api-types:watch & bun run dev:next",
     "dev:next": "next dev -p 3003",
     "build": "next build",
     "start": "next start",
@@ -14,19 +14,14 @@
     "fix": "ts-standard --fix",
     "api-types": "graphql-codegen",
     "api-types:watch": "graphql-codegen --watch",
+    "api-types:EXTERNALAPI": "npx openapi-typescript@5.4.0 https://EXTERNALAPI.com/REST/v1/openapi.json --output types/EXTERNALAPI.ts",
     "new:collection": "mkdir graphql/collections/_NEW && cp graphql/collections/_TEMPLATE/* graphql/collections/_NEW && echo '\\i graphql/collections/_NEW/schema.sql' >> graphql/collections/all_tables.sql",
     "database:reset": "eval $(grep '^DATABASE_URL' .env.local) && psql ${DATABASE_URL} -a -f graphql/collections/all_tables.sql"
   },
-  "standard": {
-    "parser": "babel-eslint",
+  "ts-standard": {
     "ignore": [
-      ".next/",
-      "next.config.js"
-    ],
-    "globals": [
-      "describe",
-      "expect",
-      "it"
+      "next-env.d.ts",
+      "graphql/__generated__"
     ]
   },
   "dependencies": {
@@ -40,7 +35,7 @@
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "graphile-utils": "^4.13.0",
-    "graphql": "^16.8.0",
+    "graphql": "^16.8.1",
     "next": "13.4.19",
     "pg": "^8.11.3",
     "postgraphile": "^4.13.0",

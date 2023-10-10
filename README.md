@@ -27,8 +27,8 @@ _Lightning fast, all JavaScript._
 * Google Analytics and `google-site-verification` support (see `config/config.js`).
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
-* Unit testing with Jasmine (`yarn unit`).
-* Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
+* Unit testing with Jasmine (`bun run unit`).
+* Code linting and formatting with StandardJS (`bun run lint`/`bun run fix`).
 
 
 ## Demo
@@ -51,7 +51,7 @@ Remove the .git folder since you want to create a new repository
 Install dependencies:
 
     cd [MY_APP]
-    yarn  # or npm install
+    bun install
 
 Install Postgres and set up the database:
 
@@ -68,12 +68,12 @@ Configure the `.env` file.
 
 Start it by doing the following:
 
-    yarn dev  # or 'yarn now' to run with Zeit Now serverless
+    bun run dev
 
 In production:
 
-    yarn build
-    yarn start
+    bun run build
+    bun run start
 
 If you navigate to `http://localhost:3003/` you will see a web page with a list of articles (or an empty list if you haven’t added one).
 
@@ -88,36 +88,6 @@ Your GraphQL API server is running at `http://localhost:3003/api/graphql`.
 You can either deploy as a [serverless deployment](https://zeit.co/docs/v2/serverless-functions/introduction/), or as a traditional Express server.
 
 Depending on which deployment you make, some files are unnecessary*.
-
-### Deploying serverless (on Zeit Now)
-
-Run in development mode with:
-
-    yarn now
-
-Deploy to Now with:
-
-	yarn deploy
-
-*Unnecessary files:
-
-- `apollo-server-express` module
-- `/server` folder
-
-(Shortcut: `yarn remove apollo-server-express; rm -rf server`)
-
-### Deploying as Express server (on Heroku)
-
-    heroku create [MY_APP]
-    heroku addons:create heroku-postgresql:hobby-dev
-    git push heroku master
-
-*Unnecessary files:
-
-- `/api` folder
-- `apollo-server-micro` module
-
-(Shortcut: `yarn remove apollo-server-micro; rm -rf api`)
 
 
 ## Modifying the app to your needs
@@ -153,7 +123,7 @@ Then, do search/replace inside the files for different casing: article, Article,
 
 ### Create a new data model/object type
 
-    yarn model  # Creates a new folder graphql/newObject with 4 empty JS files inside
+    bun run new:collection  # Creates a new folder graphql/newObject with 4 empty JS files inside
 
 ### Change port number
 
