@@ -35,7 +35,12 @@ const usePromptAndDeleteArticle = (article) => {
 
 const toSlug = str => str && str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
 
-const ArticleListItem = ({ article, index, inProgress = false }) => {
+interface ArticleListItemProps {
+  article: any
+  inProgress?: boolean
+}
+
+const ArticleListItem = ({ article, inProgress = false }: ArticleListItemProps) => {
   const promptAndUpdateArticle = usePromptAndUpdateArticle(article, 'title')
   const promptAndDeleteArticle = usePromptAndDeleteArticle(article)
 
