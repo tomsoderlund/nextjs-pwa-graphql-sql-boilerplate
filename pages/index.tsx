@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 import { config } from '../config/config'
-import { withApollo } from '../graphql/apollo'
 
 import Page from '../components/Page'
 import ArticleList from '../components/articles/ArticleList'
@@ -24,8 +23,8 @@ function StartPage ({ query, asPath }) {
       <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
 
       <ul>
-        <li><Link href='/'><a>Home</a></Link></li>
-        <li><Link href='/articles/other-1'><a>Other route</a></Link></li>
+        <li><Link legacyBehavior href='/'><a>Home</a></Link></li>
+        <li><Link legacyBehavior href='/articles/other-1'><a>Other route</a></Link></li>
       </ul>
 
       <p>Get the <a target='_blank' rel='noopener noreferrer' href='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'>source code for nextjs-pwa-graphql-sql-boilerplate</a></p>
@@ -33,4 +32,4 @@ function StartPage ({ query, asPath }) {
   )
 }
 
-export default withApollo(StartPage)
+export default StartPage

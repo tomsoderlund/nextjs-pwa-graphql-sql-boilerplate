@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useUpdateArticle, useDeleteArticle } from '../../graphql/article/hooks'
+import { useUpdateArticle, useDeleteArticle } from '../../graphql/collections/article/hooks'
 
 const usePromptAndUpdateArticle = (article, fieldName) => {
   const updateArticle = useUpdateArticle()
@@ -41,7 +41,7 @@ const ArticleListItem = ({ article, index, inProgress = false }) => {
 
   return (
     <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id}`}>
-      <Link href={`/articles/[article]?article=${toSlug(article.title)}-${article.id}`} as={`/articles/${toSlug(article.title)}-${article.id}`}><a>{article.title}</a></Link>
+      <Link legacyBehavior href={`/articles/[article]?article=${toSlug(article.title)}-${article.id}`} as={`/articles/${toSlug(article.title)}-${article.id}`}><a>{article.title}</a></Link>
       <a className='action update' onClick={promptAndUpdateArticle}>Update</a>
       <a className='action delete' onClick={promptAndDeleteArticle}>Delete</a>
       <style jsx>{`
