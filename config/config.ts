@@ -1,6 +1,7 @@
 const packageJson = require('../package.json')
 const manifest = require('../public/manifest.json')
 
+export const environment = process.env.NODE_ENV
 const appSlug = 'nextjs-pwa-graphql-sql'
 const serverPort = parseInt(process.env.PORT ?? '3003')
 
@@ -60,7 +61,5 @@ const completeConfig: AllConfigurations = {
 }
 
 // Public API
-module.exports = {
-  config: { ...completeConfig.default, ...completeConfig[process.env.NODE_ENV] },
-  completeConfig
-}
+export const config = { ...completeConfig.default, ...completeConfig[environment] }
+export default config
