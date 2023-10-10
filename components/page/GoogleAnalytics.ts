@@ -1,6 +1,12 @@
 import { config } from '../../config/config'
 import isDevelopment from '../../lib/isDevelopment'
 
+declare global {
+  interface Window {
+    gtag: (event: string, action: string, options: any) => void
+  }
+}
+
 /* options: { 'page_title' : 'homepage' } */
 // See https://developers.google.com/analytics/devguides/collection/gtagjs
 export const googlePageview = (path: string, options?: any) => {

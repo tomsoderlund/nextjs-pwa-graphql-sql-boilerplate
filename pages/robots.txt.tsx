@@ -1,16 +1,21 @@
-import React from 'react'
+import { NextPage, GetServerSidePropsContext } from 'next'
 import { config } from '../config/config'
 
 const robotsTxt = `# robotstxt.org
 
 User-agent: *
 
-Sitemap: ${config.appUrl}sitemap.xml`
+Sitemap: ${config.appUrl as string}sitemap.xml`
 
-export default class Sitemap extends React.Component {
-  static getInitialProps ({ res }) {
+const RobotsTxt: NextPage = () => null
+
+export async function getServerSideProps ({ res }: GetServerSidePropsContext) {
+  if (res !== undefined) {
     res.setHeader('Content-Type', 'text/plain')
     res.write(robotsTxt)
     res.end()
   }
+  return { props: {} }
 }
+
+export default RobotsTxt

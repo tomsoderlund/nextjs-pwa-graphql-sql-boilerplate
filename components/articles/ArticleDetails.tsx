@@ -1,6 +1,8 @@
 import React from 'react'
 
-const ArticleDetails = ({ article }) => {
+import { Article } from 'graphql/__generated__/graphql'
+
+const ArticleDetails = ({ article }: { article: Article }) => {
   return (
     <>
       <h1>{article.title}</h1>

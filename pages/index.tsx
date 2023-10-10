@@ -10,7 +10,7 @@ interface StartPageProps {
   title: string
 }
 
-function StartPage ({ title }: StartPageProps) {
+function StartPage ({ title }: StartPageProps): React.ReactElement {
   // Note: 'query' contains both /:params and ?query=value from url
   return (
     <>

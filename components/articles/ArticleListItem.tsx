@@ -1,7 +1,9 @@
 import Link from 'next/link'
+
+import { Article } from 'graphql/__generated__/graphql'
 import { useUpdateArticle, useDeleteArticle } from '../../graphql/collections/article/hooks'
 
-const usePromptAndUpdateArticle = (article, fieldName) => {
+const usePromptAndUpdateArticle = (article: Article, fieldName: keyof Article) => {
   const updateArticle = useUpdateArticle()
 
   const handleUpdate = async () => {
@@ -18,8 +20,8 @@ const usePromptAndUpdateArticle = (article, fieldName) => {
   return handleUpdate
 }
 
-const usePromptAndDeleteArticle = (article) => {
-  const deleteArticle = useDeleteArticle(article)
+const usePromptAndDeleteArticle = (article: Article) => {
+  const deleteArticle = useDeleteArticle()
 
   const handleDelete = async () => {
     if (window.confirm(`Delete ${article.title}?`)) {
@@ -33,7 +35,7 @@ const usePromptAndDeleteArticle = (article) => {
   return handleDelete
 }
 
-const toSlug = str => str && str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
+const toSlug = (str: string): string => str && str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
 
 interface ArticleListItemProps {
   article: any

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { getAuth, sendSignInLinkToEmail } from 'firebase/auth'
-import { Button, TextField, Typography, Container } from '@mui/material'
+// import { getAuth, sendSignInLinkToEmail } from 'firebase/auth'
 
-import { firebaseApp } from 'lib/firebase'
+// import { firebaseApp } from 'lib/firebase'
 // import showNotification from 'lib/showNotification'
 // import makeRestRequest from 'lib/makeRestRequest'
 // import { googleEvent } from 'components/page/GoogleAnalytics'
@@ -27,7 +26,7 @@ interface SigninWithEmailFormProps {
 const SigninWithEmailForm = ({ buttonText = 'Sign in', thankyouText = 'Check your email for a sign-in link!', googleEventName = 'user_login', redirectTo, onCompleted }: SigninWithEmailFormProps): React.ReactElement => {
   const [inProgress, setInProgress] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const auth = getAuth(firebaseApp)
+  // const auth = getAuth(firebaseApp)
 
   const [inputs, setInputs] = useState({ email: '' })
   const handleInputChange = ({ target }: SimpleEvent): void => setInputs({ ...inputs, [target.name]: target.value })
@@ -42,7 +41,7 @@ const SigninWithEmailForm = ({ buttonText = 'Sign in', thankyouText = 'Check you
         url: `${window.location.origin}/signin/authenticate${redirectTo !== undefined ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ''}`,
         handleCodeInApp: true
       }
-      await sendSignInLinkToEmail(auth, inputs.email, actionCodeSettings)
+      // await sendSignInLinkToEmail(auth, inputs.email, actionCodeSettings)
       window.localStorage.setItem('emailForSignIn', inputs.email)
       // makeRestRequest('/api/notifications', { email: anonymizeEmail(inputs.email) }, { method: 'POST' })
       handleInputChange({ target: { name: 'email', value: '' } })
@@ -59,43 +58,39 @@ const SigninWithEmailForm = ({ buttonText = 'Sign in', thankyouText = 'Check you
   }
 
   return (
-    <Container>
+    <div>
       {!isSubmitted
         ? (
           <>
             <form className='signin-form' onSubmit={(event) => { void handleSubmit(event) }}>
-              <TextField
+              <input
                 id='email'
                 name='email'
                 type='email'
                 autoComplete='email'
                 placeholder='Your email'
                 required
-                fullWidth
-                margin='normal'
                 value={inputs.email}
                 onChange={handleInputChange}
                 disabled={inProgress}
               />
-              <Button
+              <button
                 type='submit'
-                variant='contained'
                 color='primary'
                 disabled={inProgress}
-                fullWidth
               >
                 Sign in
-              </Button>
+              </button>
             </form>
-            <Typography variant='body2' align='center' style={{ marginTop: '1em' }}>
+            <div style={{ marginTop: '1em' }}>
               (No password necessary, we will send a sign-in link to your email inbox)
-            </Typography>
+            </div>
           </>
           )
         : (
-          <Typography className='thankyou'>{thankyouText}</Typography>
+          <div className='thankyou'>{thankyouText}</div>
           )}
-    </Container>
+    </div>
   )
 }
 

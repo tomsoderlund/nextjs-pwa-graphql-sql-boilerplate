@@ -1,32 +1,58 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
+import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
-import { config } from '../config/config'
-import { formatDate } from '../lib/formatDate'
+import { config } from 'config/config'
+import { formatDate } from 'lib/formatDate'
 
-const Sitemap = () => {
-  const getDate = () => formatDate(new Date())
-  const pages = ['/']
+interface SiteUrlProps {
+  path: string
+}
+
+const SiteUrl = ({ path }: SiteUrlProps): React.ReactElement => {
+  const getDate = (): string => formatDate(new Date())
+  return (
+    <url>
+      <loc>{`${config.appUrl}${path.substring(1)}`}</loc>
+      <lastmod>{getDate()}</lastmod>
+    </url>
+  )
+}
+
+interface SitemapProps {
+  pagePaths: string[]
+}
+
+const Sitemap = ({ pagePaths }: SitemapProps): React.ReactElement => {
   return (
     <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-      {pages.map((path, index) => (
-        <url key={index}>
-          <loc>{config.appUrl}{path.substr(1)}</loc>
-          <lastmod>{getDate()}</lastmod>
-        </url>
-      ))}
+      {pagePaths.map((path, index) => <SiteUrl key={index} path={path} />)}
     </urlset>
   )
 }
 
-Sitemap.getInitialProps = async ({ res }) => { // { req, res, pathname, asPath, query }
-  res.setHeader('Content-Type', 'text/xml')
-  res.write(
-    ReactDOMServer.renderToStaticMarkup(
-      <Sitemap />
+const getPagePaths = async (): Promise<string[]> => {
+  return ['/']
+}
+
+interface SitemapPageParams extends ParsedUrlQuery {
+}
+
+export async function getServerSideProps ({ res }: GetServerSidePropsContext<SitemapPageParams>): Promise<GetServerSidePropsResult<SitemapPageParams>> {
+  if (res !== undefined) {
+    const pagePaths = await getPagePaths()
+    res.setHeader('Content-Type', 'text/xml')
+    res.write(
+      ReactDOMServer.renderToStaticMarkup(
+        <Sitemap
+          pagePaths={pagePaths}
+        />
+      )
     )
-  )
-  res.end()
+    res.end()
+  }
+  return { props: {} }
 }
 
 export default Sitemap

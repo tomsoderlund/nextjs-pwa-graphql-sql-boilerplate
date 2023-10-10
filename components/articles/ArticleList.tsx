@@ -1,11 +1,12 @@
 import React from 'react'
 
+import { Article } from 'graphql/__generated__/graphql'
 import { useListArticles, useCreateArticle } from '../../graphql/collections/article/hooks'
 import ArticleListItem from './ArticleListItem'
 
 const useCreateArticleForm = () => {
   const [inputs, setInputs] = React.useState({ title: '' })
-  const createArticle = () => useCreateArticle()
+  const createArticle = useCreateArticle()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     if (event) event.preventDefault()
@@ -35,7 +36,7 @@ const ArticleList = () => {
 
   return (
     <>
-      {data.articles && data.articles.map(article => (
+      {data.articles && data.articles.map((article: Article) => (
         <ArticleListItem
           key={article.id}
           article={article}
