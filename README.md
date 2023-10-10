@@ -1,4 +1,4 @@
-# Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate
+# Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL boilerplate
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/github_preview.jpg)
 
@@ -134,12 +134,12 @@ The database item is called “Article”, but you probably want something else 
 
 Rename the files:
 
-    mkdir graphql/{newName}
-    mv graphql/article/hooks.js graphql/{newName}/hooks.js
-    mv graphql/article/queries.js graphql/{newName}/queries.js
-    mv graphql/article/resolvers.js graphql/{newName}/resolvers.js
-    mv graphql/article/schema.js graphql/{newName}/schema.js
-    rm -r graphql/article
+    mkdir graphql/collections/{newName}
+    mv graphql/collections/article/hooks.js graphql/collections/{newName}/hooks.js
+    mv graphql/collections/article/queries.js graphql/collections/{newName}/queries.js
+    mv graphql/collections/article/resolvers.js graphql/collections/{newName}/resolvers.js
+    mv graphql/collections/article/schema.js graphql/collections/{newName}/schema.js
+    rm -r graphql/collections/article
     mkdir -p components/{newName}s
     mv components/articles/ArticleList.js components/{newName}s/{NewName}List.js
     mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js
@@ -162,7 +162,7 @@ Do search/replace for "3003" to something else.
 ### How to remove/replace SQL database
 
 1. Remove references to `graphql/postgres`
-2. `graphql/article/resolvers.js`: remove “sql*” references
+2. `graphql/collections/article/resolvers.js`: remove “sql*” references
 
 ### Change visual theme (CSS)
 
