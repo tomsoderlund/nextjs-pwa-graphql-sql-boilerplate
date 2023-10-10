@@ -1,6 +1,6 @@
 import { Pool, Client, PoolConfig } from 'pg'
 import { config } from 'config/config'
-import { dateAsISO } from 'lib/dates'
+import { dateAsISO } from 'lib/formatDate'
 
 // Postgres (pg)
 if (config.databaseUrl === undefined) throw new Error('.env DATABASE_URL not set')
