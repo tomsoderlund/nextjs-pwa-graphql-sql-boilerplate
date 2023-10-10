@@ -2,20 +2,49 @@ const packageJson = require('../package.json')
 const manifest = require('../public/manifest.json')
 
 const appSlug = 'nextjs-pwa-graphql-sql'
-const serverPort = process.env.PORT || 3003
+const serverPort = parseInt(process.env.PORT ?? '3003')
 
-const completeConfig = {
+interface EnvironmentConfiguration {
+  appSlug: string
+  appVersion: string
+  appUrl: string
+  appName: string
+  appTagline?: string
+  appDescription?: string
+  serverPort: number
+  locale?: string
+  googleAnalyticsId?: string | null
+  fonts?: string[][]
+
+  startPagePath?: string
+  apiBaseUrl?: string
+  graphqlPath?: string
+  databaseUrl?: string
+  allowedHostsList?: string[]
+
+  isProduction?: boolean
+  sendRealMessages?: boolean
+}
+
+interface AllConfigurations {
+  default?: EnvironmentConfiguration
+  development?: Partial<EnvironmentConfiguration>
+  production?: Partial<EnvironmentConfiguration>
+  test?: Partial<EnvironmentConfiguration>
+}
+
+const completeConfig: AllConfigurations = {
 
   default: {
     serverPort,
     appSlug,
-    appUrl: process.env.APP_URL || '', // Used for GraphQL url - see graphql/apollo.js. Not used/needed by Zeit Now.
+    appVersion: packageJson.version,
+    appUrl: process.env.APP_URL || '',
     appName: manifest.name,
     appTagline: manifest.description,
     appDescription: manifest.description,
     locale: 'en_US',
     googleAnalyticsId: 'UA-XXXXXXX-X',
-    googleSiteVerification: false,
     databaseUrl: process.env.DATABASE_URL,
     graphqlPath: '/api/graphql'
   },
