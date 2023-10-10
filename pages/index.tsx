@@ -1,26 +1,27 @@
 import React from 'react'
 import Link from 'next/link'
+import type { GetStaticPropsResult } from 'next'
 
 import { config } from '../config/config'
 
-import Page from '../components/Page'
 import ArticleList from '../components/articles/ArticleList'
 
-function StartPage ({ query, asPath }) {
+interface StartPageProps {
+  title: string
+}
+
+function StartPage ({ title }: StartPageProps) {
   // Note: 'query' contains both /:params and ?query=value from url
   return (
-    <Page
-      title={undefined}
-      path={asPath}
-    >
-      <h1>{config.appName}</h1>
+    <>
+      <h1>{config.appName}: {title}</h1>
 
       <p><em>{config.appTagline}</em></p>
 
       <ArticleList />
 
       <h2>Routing</h2>
-      <p>Current query: <strong>{JSON.stringify(query)}</strong></p>
+      <p>Current query: <strong>{JSON.stringify('query')}</strong></p>
 
       <ul>
         <li><Link legacyBehavior href='/'><a>Home</a></Link></li>
@@ -28,8 +29,14 @@ function StartPage ({ query, asPath }) {
       </ul>
 
       <p>Get the <a target='_blank' rel='noopener noreferrer' href='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'>source code for nextjs-pwa-graphql-sql-boilerplate</a></p>
-    </Page>
+    </>
   )
 }
 
 export default StartPage
+
+export const getStaticProps = async (): Promise<GetStaticPropsResult<{}>> => ({
+  props: {
+    title: 'Welcome'
+  }
+})

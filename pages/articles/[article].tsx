@@ -9,7 +9,7 @@ import ArticleDetails from '../../components/articles/ArticleDetails'
 function ArticlePage ({ query, asPath }) {
   const { data, loading, error } = useGetArticle(query.article)
 
-  if (error || (data && !data.article)) throw error
+  if ((error != null) || (data && !data.article)) throw error
 
   return (
     <Page
