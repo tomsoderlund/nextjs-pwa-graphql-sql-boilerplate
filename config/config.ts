@@ -2,6 +2,7 @@ const packageJson = require('../package.json')
 const manifest = require('../public/manifest.json')
 
 export const environment = process.env.NODE_ENV
+export const isDevelopment = process.env.NODE_ENV === 'development'
 const appSlug = 'nextjs-pwa-graphql-sql'
 const serverPort = parseInt(process.env.PORT ?? '3003')
 

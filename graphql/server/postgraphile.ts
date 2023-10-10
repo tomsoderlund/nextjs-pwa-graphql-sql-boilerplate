@@ -10,8 +10,8 @@ export default postgraphile(
   'public',
   {
     // watchPg: true, // Need extension for this to work properly
-    graphiql: isDevelopment,
-    enhanceGraphiql: isDevelopment,
+    graphiql: true,
+    enhanceGraphiql: true,
     // externalUrlBase: "/api", // Don't use this since graphql route is incorrect w/ it
     graphqlRoute: '/api/graphql',
     graphiqlRoute: '/api/graphiql',
