@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 import { config } from '../config/config'
-import formatDate from '../lib/formatDate'
+import { formatDate } from '../lib/formatDate'
 
 const Sitemap = () => {
   const getDate = () => formatDate(new Date())
