@@ -17,11 +17,13 @@ function ArticlePage ({ query, asPath }) {
       title={loading ? 'Loading...' : data.article.title}
       path={asPath}
     >
-      {loading ? <div>Loading...</div> : (
-        <ArticleDetails
-          article={data.article}
-        />
-      )}
+      {loading
+        ? <div>Loading...</div>
+        : (
+          <ArticleDetails
+            article={data.article}
+          />
+          )}
 
       <h2>Routing</h2>
       <p>Current query: <strong>{JSON.stringify(query)}</strong></p>

@@ -62,7 +62,8 @@ const ArticleListItem = ({ article, index, inProgress = false }) => {
         .inProgress {
           opacity: 0.3;
         }
-      `}</style>
+      `}
+      </style>
     </div>
   )
 }

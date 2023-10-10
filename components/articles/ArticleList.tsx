@@ -56,7 +56,8 @@ const ArticleList = () => {
           form {
             margin-top: 1em
           }
-        `}</style>
+        `}
+        </style>
       </form>
     </>
   )

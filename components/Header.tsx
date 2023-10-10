@@ -20,7 +20,8 @@ const AppIcon = () => (
           height: 30px;
           border-radius: 50%;
         }
-      `}</style>
+      `}
+      </style>
     </a>
   </Link>
 )
@@ -48,6 +49,7 @@ export default ({ title = config.appName, children }) => (
       :global(main) {
         margin-top: 50px;
       }
-    `}</style>
+    `}
+    </style>
   </header>
 )
