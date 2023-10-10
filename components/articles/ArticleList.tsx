@@ -31,7 +31,7 @@ const ArticleList = () => {
 
   const { data, loading, error } = useListArticles()
   if (loading) return 'Loading...'
-  if (error) return `Error! ${error.message}`
+  if (error != null) return `Error! ${error.message}`
 
   return (
     <>

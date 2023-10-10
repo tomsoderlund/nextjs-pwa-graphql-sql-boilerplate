@@ -33,7 +33,7 @@ interface UserReturnProps {
 const UserContext = createContext<Partial<UserReturnProps>>({})
 
 export const UserContextProvider = (props: UserInputProps): React.ReactElement => {
-  const [user, setUser] = useState</*User |*/ any | null | undefined>(undefined)
+  const [user, setUser] = useState</* User | */ any | null | undefined>(undefined)
   // const auth = getAuth(firebaseApp)
   const [createUser] = useMutation(CREATE_USER)
   const router = useRouter()
