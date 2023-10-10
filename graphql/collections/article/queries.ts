@@ -1,64 +1,76 @@
-// Client-side
-import gql from 'graphql-tag'
+import { gql } from 'graphql/__generated__'
 
-const ArticleShortInfo = `
+// ----- Fragments -----
+
+gql(`
   fragment ArticleShortInfo on Article {
     id
     title
-    content
-    date_published
+    createdDate
   }
-`
+`)
 
-export const GET_ARTICLES = gql`
-  ${ArticleShortInfo}
+// ----- Queries -----
 
-  query GetArticles {
-    articles (sort: "title asc") {
+export const LIST_ARTICLES = gql(`
+  query ListArticles ($offset: Int = 0, $first: Int = 20) {
+    allArticlesList (
+      condition: {
+      },
+
+      offset: $offset,
+      first: $first,
+
+      orderBy: NAME_ASC
+    ) {
+      id
       ...ArticleShortInfo
     }
   }
-`
+`)
 
-// export const GET_ARTICLES_VARS = {
+// export const LIST_ARTICLES_VARS = {
 //   skip: 0,
 //   first: 10
 // }
 
-export const GET_ARTICLE = gql`
-  ${ArticleShortInfo}
-
-  query GetArticle ($id: ID, $slugAndId: String) {
-    article (id: $id, slugAndId: $slugAndId) {
-      ...ArticleShortInfo
-    }
-  }
-`
-
-export const ADD_ARTICLE = gql`
-  ${ArticleShortInfo}
-
-  mutation AddArticle ($title: String!) {
-    addArticle (title: $title) {
-      ...ArticleShortInfo
-    }
-  }
-`
-
-export const UPDATE_ARTICLE = gql`
-  ${ArticleShortInfo}
-
-  mutation UpdateArticle ($id: ID!, $title: String) {
-    updateArticle (id: $id, title: $title) {
-      ...ArticleShortInfo
-    }
-  }
-`
-
-export const DELETE_ARTICLE = gql`
-  mutation DeleteArticle ($id: ID!) {
-    deleteArticle (id: $id) {
+export const GET_ARTICLE = gql(`
+  query GetArticle ($id: Int!) {
+    articleById(id: $id) {
       id
+      ...ArticleShortInfo
+  }
+`)
+
+// ----- Mutations -----
+
+export const CREATE_ARTICLE = gql(`
+  mutation CreateArticle ($input: CreateArticleInput!) {
+    createArticle(input: $input) {
+      article {
+        id
+        ...ArticleShortInfo
+      }
     }
   }
-`
+`)
+
+export const UPDATE_ARTICLE = gql(`
+  mutation UpdateArticle ($id: Int!, $articlePatch: ArticlePatch!) {
+    updateArticleById(input: {id: $id, articlePatch: $articlePatch}) {
+      article {
+        ...ArticleShortInfo
+      }      
+    }
+  }
+`)
+
+export const DELETE_ARTICLE = gql(`
+  mutation DeleteArticle ($id: Int!) {
+    deleteArticleById(input: {id: $id}) {
+      article {
+        ...ArticleShortInfo
+      }
+    }
+  }
+`)
