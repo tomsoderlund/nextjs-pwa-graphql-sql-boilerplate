@@ -1,3 +1,4 @@
+/*
 import { gql } from 'graphql/__generated__'
 
 // ----- Fragments -----
@@ -38,3 +39,4 @@ export const CREATE_USER = gql(`
     }
   }
 `)
+*/
