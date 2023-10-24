@@ -17,7 +17,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ query, asPath }) => {
   if (error != null || (data && !data.article)) throw error
 
   return (
-    <Page title={loading ? 'Loading...' : data.article.title} path={asPath}>
+    <>
       {loading
         ? (
           <div>Loading...</div>
@@ -36,7 +36,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ query, asPath }) => {
           </Link>
         </li>
       </ul>
-    </Page>
+    </>
   )
 }
 
