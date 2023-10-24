@@ -11,7 +11,7 @@ declare global {
 // See https://developers.google.com/analytics/devguides/collection/gtagjs
 export const googlePageview = (path: string, options?: any): void => {
   const completeOptions = Object.assign({}, options, { page_path: path }) // 'page_title' : 'homepage'
-  if (config.googleAnalyticsId !== undefined) window.gtag('config', config.googleAnalyticsId, completeOptions)
+  if (config.googleAnalyticsId !== undefined && config.googleAnalyticsId !== null) window.gtag('config', config.googleAnalyticsId, completeOptions)
   if (isDevelopment()) console.log('Google pageview:', { path, options: completeOptions })
 }
 
