@@ -27,8 +27,8 @@ _Lightning fast, all JavaScript._
 * Google Analytics and `google-site-verification` support (see `config/config.js`).
 * Flexible configuration with `config/config.js` and `.env` file.
 * Hot reloading with `nodemon`.
-* Unit testing with Jasmine (`bun run unit`).
-* Code linting and formatting with StandardJS (`bun run lint`/`bun run fix`).
+* Unit testing with Jasmine (`yarn unit`).
+* Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
 
 
 ## Demo
@@ -51,7 +51,7 @@ Remove the .git folder since you want to create a new repository
 Install dependencies:
 
     cd [MY_APP]
-    bun install
+    yarn
 
 Install Postgres and set up the database:
 
@@ -68,12 +68,12 @@ Configure the `.env` file.
 
 Start it by doing the following:
 
-    bun run dev
+    yarn dev
 
 In production:
 
-    bun run build
-    bun run start
+    yarn build
+    yarn start
 
 If you navigate to `http://localhost:3003/` you will see a web page with a list of articles (or an empty list if you haven’t added one).
 
@@ -123,7 +123,7 @@ Then, do search/replace inside the files for different casing: article, Article,
 
 ### Create a new data model/object type
 
-    bun run new:collection  # Creates a new folder graphql/newObject with 4 empty JS files inside
+    yarn new:collection  # Creates a new folder graphql/newObject with 4 empty JS files inside
 
 ### Change port number
 
