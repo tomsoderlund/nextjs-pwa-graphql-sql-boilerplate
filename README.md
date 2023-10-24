@@ -35,7 +35,7 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-pwa-graphql-sql-boilerplate** running on Vercel here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
+See [**nextjs-pwa-graphql-sql-boilerplate** running on Vercel here](https://nextjs-pwa-graphql-sql-boilerplate.vercel.app/).
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
@@ -83,7 +83,7 @@ If you navigate to `http://localhost:3003/` you will see a web page with a list 
 
 Your GraphQL API server is running at `http://localhost:3003/api/graphql`.
 Your GraphQL Explorer is running at `http://localhost:3003/api/graphiql`.
-[Try the GraphQL Explorer](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphiql) on the demo server.
+[Try the GraphQL Explorer](https://nextjs-pwa-graphql-sql-boilerplate.vercel.app/api/graphiql) on the demo server.
 
 
 ## Modifying the app to your needs
