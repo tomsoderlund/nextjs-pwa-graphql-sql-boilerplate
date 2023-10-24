@@ -14,7 +14,6 @@ function StartPage ({ title }: StartPageProps): React.ReactElement {
   return (
     <>
       <h1>{config.appName}: {title}</h1>
-
       <p><em>{config.appTagline}</em></p>
 
       <ArticleList />
