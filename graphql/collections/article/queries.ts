@@ -6,7 +6,7 @@ gql(`
   fragment ArticleShortInfo on Article {
     id
     title
-    createdDate
+    dateCreated
   }
 `)
 
@@ -15,9 +15,6 @@ gql(`
 export const LIST_ARTICLES = gql(`
   query ListArticles ($offset: Int = 0, $first: Int = 20) {
     allArticlesList (
-      condition: {
-      },
-
       offset: $offset,
       first: $first,
 
