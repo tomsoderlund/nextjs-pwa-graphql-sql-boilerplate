@@ -5,21 +5,14 @@ import { gql } from 'graphql/__generated__'
 gql(`
   fragment ArticleShortInfo on Article {
     id
-    title
-    dateCreated
   }
 `)
 
 // ----- Queries -----
 
 export const LIST_ARTICLES = gql(`
-  query ListArticles ($offset: Int = 0, $first: Int = 20) {
-    allArticlesList (
-      offset: $offset,
-      first: $first,
-
-      orderBy: NAME_ASC
-    ) {
+  query ListArticles {
+    allArticlesList (orderBy: TITLE_ASC) {
       id
       ...ArticleShortInfo
     }
@@ -36,6 +29,7 @@ export const GET_ARTICLE = gql(`
     articleById(id: $id) {
       id
       ...ArticleShortInfo
+    }
   }
 `)
 
@@ -57,7 +51,7 @@ export const UPDATE_ARTICLE = gql(`
     updateArticleById(input: {id: $id, articlePatch: $articlePatch}) {
       article {
         ...ArticleShortInfo
-      }      
+      }
     }
   }
 `)

@@ -16,6 +16,7 @@ Using 'Article' type in your code:
   import { Article } from 'graphql/__generated__/graphql'
 
 */
+
 import { useQuery, QueryResult, useMutation, MutationFunction } from '@apollo/client'
 
 import {
@@ -39,7 +40,7 @@ import {
 } from './queries'
 
 export const useListArticles = (): QueryResult<ListArticlesQuery, ListArticlesQueryVariables> => {
-  return useQuery(LIST_ARTICLES, { variables: { } })
+  return useQuery(LIST_ARTICLES)
 }
 
 export const useGetArticle = (id: number): QueryResult<GetArticleQuery, GetArticleQueryVariables> =>
