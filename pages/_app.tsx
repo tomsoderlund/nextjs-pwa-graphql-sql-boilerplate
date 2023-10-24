@@ -8,6 +8,7 @@ import client from '../graphql/apollo'
 // import AppThemeProvider from 'components/theme/AppThemeProvider'
 import { googlePageview } from '../components/page/GoogleAnalytics'
 import PageHead from '../components/page/PageHead'
+import Notifications from '../components/page/Notifications'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
 
@@ -20,6 +21,7 @@ export default function App ({ Component, pageProps, router }: AppProps): React.
         {...pageProps}
         {...router}
       />
+      <Notifications />
     </ApolloProvider>
   )
 }
