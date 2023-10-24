@@ -4,11 +4,11 @@ import { ApolloProvider } from '@apollo/client'
 import Router from 'next/router'
 
 import client from '../graphql/apollo'
-// import '../styles/globals.css'
-// import AppThemeProvider from 'components/theme/AppThemeProvider'
 import { googlePageview } from '../components/page/GoogleAnalytics'
 import PageHead from '../components/page/PageHead'
 import Notifications from '../components/page/Notifications'
+import 'node_modules/aether-css-framework/dist/aether.min.css'
+import '../styles/globals.css'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
 
@@ -17,10 +17,12 @@ export default function App ({ Component, pageProps, router }: AppProps): React.
   return (
     <ApolloProvider client={client}>
       <PageHead {...pageProps} />
-      <Component
-        {...pageProps}
-        {...router}
-      />
+      <main>
+        <Component
+          {...pageProps}
+          {...router}
+        />
+      </main>
       <Notifications />
     </ApolloProvider>
   )
