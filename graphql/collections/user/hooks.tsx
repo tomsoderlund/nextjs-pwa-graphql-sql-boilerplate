@@ -17,7 +17,6 @@ import { useRouter } from 'next/router'
 
 // import { firebaseApp } from 'lib/firebase'
 import { GET_USER, CREATE_USER } from './queries'
-import { UserGoodsowner } from 'graphql/__generated__/graphql'
 
 interface UserInputProps {
   children: React.ReactNode
@@ -25,7 +24,6 @@ interface UserInputProps {
 
 interface UserReturnProps {
   user: any | null
-  userGoodsowners?: UserGoodsowner[]
 
   signOut: () => Promise<void>
 }
@@ -33,14 +31,13 @@ interface UserReturnProps {
 const UserContext = createContext<Partial<UserReturnProps>>({})
 
 export const UserContextProvider = (props: UserInputProps): React.ReactElement => {
-  const [user, setUser] = useState</* User | */ any | null | undefined>(undefined)
+  const [user] = useState</* User | */ any | null | undefined>(undefined)
   // const auth = getAuth(firebaseApp)
   const [createUser] = useMutation(CREATE_USER)
   const router = useRouter()
 
   // Get user profile from Postgres
   const { data } = useQuery(GET_USER, { variables: { firebaseUid: user?.uid as string } })
-  const userGoodsowners = data?.userByFirebaseUid?.userGoodsownersByUserIdList as UserGoodsowner[]
 
   useEffect(() => {
     try {
@@ -78,7 +75,6 @@ export const UserContextProvider = (props: UserInputProps): React.ReactElement =
   // Make the context object (i.e. the “API” for User)
   const userContext: UserReturnProps = {
     user,
-    userGoodsowners,
 
     signOut: signOutFunction
   }

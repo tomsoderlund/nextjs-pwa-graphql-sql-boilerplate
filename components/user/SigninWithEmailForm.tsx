@@ -37,10 +37,10 @@ const SigninWithEmailForm = ({ buttonText = 'Sign in', thankyouText = 'Check you
 
     try {
       // Firebase sign-in with just email link, no password
-      const actionCodeSettings = {
-        url: `${window.location.origin}/signin/authenticate${redirectTo !== undefined ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ''}`,
-        handleCodeInApp: true
-      }
+      // const actionCodeSettings = {
+      //   url: `${window.location.origin}/signin/authenticate${redirectTo !== undefined ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ''}`,
+      //   handleCodeInApp: true
+      // }
       // await sendSignInLinkToEmail(auth, inputs.email, actionCodeSettings)
       window.localStorage.setItem('emailForSignIn', inputs.email)
       // makeRestRequest('/api/notifications', { email: anonymizeEmail(inputs.email) }, { method: 'POST' })

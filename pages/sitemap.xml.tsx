@@ -14,7 +14,7 @@ const SiteUrl = ({ path }: SiteUrlProps): React.ReactElement => {
   const getDate = (): string => formatDate(new Date())
   return (
     <url>
-      <loc>{`${config.appUrl}${path.substring(1)}`}</loc>
+      <loc>{`${config.appUrl as string}${path.substring(1)}`}</loc>
       <lastmod>{getDate()}</lastmod>
     </url>
   )

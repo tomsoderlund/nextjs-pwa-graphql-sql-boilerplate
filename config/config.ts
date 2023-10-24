@@ -1,5 +1,5 @@
-const packageJson = require('../package.json')
-const manifest = require('../public/manifest.json')
+import packageJson from '../package.json'
+import manifest from '../public/manifest.json'
 
 export const environment = process.env.NODE_ENV
 export const isDevelopment = process.env.NODE_ENV === 'development'
@@ -41,7 +41,7 @@ const completeConfig: AllConfigurations = {
     serverPort,
     appSlug,
     appVersion: packageJson.version,
-    appUrl: process.env.APP_URL || '',
+    appUrl: process.env.APP_URL ?? '',
     appName: manifest.name,
     appTagline: manifest.description,
     appDescription: manifest.description,

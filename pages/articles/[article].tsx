@@ -14,7 +14,7 @@ interface ArticlePageProps {
 const ArticlePage: React.FC<ArticlePageProps> = ({ query, asPath }) => {
   const { data, loading, error } = useGetArticle(parseInt(query.article))
 
-  if (error != null || (data && !data.article)) throw error
+  if (error != null || (data !== undefined && (data.article === undefined || data.article === null))) throw new Error(`Error: ${error?.message as string}`)
 
   return (
     <>

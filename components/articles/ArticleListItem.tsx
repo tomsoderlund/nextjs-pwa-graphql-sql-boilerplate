@@ -3,12 +3,14 @@ import Link from 'next/link'
 import { Article } from 'graphql/__generated__/graphql'
 import { useUpdateArticle, useDeleteArticle } from '../../graphql/collections/article/hooks'
 
-const usePromptAndUpdateArticle = (article: Article, fieldName: keyof Article) => {
+type VoidFunction = () => Promise<void>
+
+const usePromptAndUpdateArticle = (article: Article, fieldName: keyof Article): VoidFunction => {
   const updateArticle = useUpdateArticle()
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (): Promise<void> => {
     const newValue = window.prompt(`New value for ${fieldName}?`, article[fieldName])
-    if (newValue) {
+    if (newValue !== null) {
       const variables = {
         id: article.id,
         [fieldName]: newValue
@@ -20,11 +22,11 @@ const usePromptAndUpdateArticle = (article: Article, fieldName: keyof Article) =
   return handleUpdate
 }
 
-const usePromptAndDeleteArticle = (article: Article) => {
+const usePromptAndDeleteArticle = (article: Article): VoidFunction => {
   const deleteArticle = useDeleteArticle()
 
-  const handleDelete = async () => {
-    if (window.confirm(`Delete ${article.title}?`)) {
+  const handleDelete = async (): Promise<void> => {
+    if (window.confirm(`Delete ${article.title as string}?`)) {
       const variables = {
         id: article.id
       }
@@ -35,22 +37,22 @@ const usePromptAndDeleteArticle = (article: Article) => {
   return handleDelete
 }
 
-const toSlug = (str: string): string => str && str.replace(/ /g, '-').replace(/[^\w-]+/g, '').toLowerCase()
+const toSlug = (str: string): string => str?.replace(/ /g, '-')?.replace(/[^\w-]+/g, '')?.toLowerCase()
 
 interface ArticleListItemProps {
   article: any
   inProgress?: boolean
 }
 
-const ArticleListItem = ({ article, inProgress = false }: ArticleListItemProps) => {
+const ArticleListItem = ({ article, inProgress = false }: ArticleListItemProps): React.ReactElement => {
   const promptAndUpdateArticle = usePromptAndUpdateArticle(article, 'title')
   const promptAndDeleteArticle = usePromptAndDeleteArticle(article)
 
   return (
-    <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id}`}>
-      <Link legacyBehavior href={`/articles/[article]?article=${toSlug(article.title)}-${article.id}`} as={`/articles/${toSlug(article.title)}-${article.id}`}><a>{article.title}</a></Link>
-      <a className='action update' onClick={promptAndUpdateArticle}>Update</a>
-      <a className='action delete' onClick={promptAndDeleteArticle}>Delete</a>
+    <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id as number}`}>
+      <Link legacyBehavior href={`/articles/${toSlug(article.title)}-${article.id as number}`}><a>{article.title}</a></Link>
+      <a className='action update' onClick={() => { void promptAndUpdateArticle() }}>Update</a>
+      <a className='action delete' onClick={() => { void promptAndDeleteArticle() }}>Delete</a>
       <style jsx>{`
         a.action {
           margin-left: 0.5em;

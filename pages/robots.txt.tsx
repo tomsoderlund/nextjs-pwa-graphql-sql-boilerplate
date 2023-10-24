@@ -9,7 +9,7 @@ Sitemap: ${config.appUrl as string}sitemap.xml`
 
 const RobotsTxt: NextPage = () => null
 
-export async function getServerSideProps ({ res }: GetServerSidePropsContext) {
+export async function getServerSideProps ({ res }: GetServerSidePropsContext): Promise<{ props: any }> {
   if (res !== undefined) {
     res.setHeader('Content-Type', 'text/plain')
     res.write(robotsTxt)

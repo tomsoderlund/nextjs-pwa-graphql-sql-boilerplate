@@ -4,13 +4,19 @@ import { Article } from 'graphql/__generated__/graphql'
 import { useListArticles, useCreateArticle } from '../../graphql/collections/article/hooks'
 import ArticleListItem from './ArticleListItem'
 
-const useCreateArticleForm = () => {
+interface CreateArticleFormProps {
+  inputs: Partial<Article>
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
+}
+
+const useCreateArticleForm = (): CreateArticleFormProps => {
   const [inputs, setInputs] = React.useState({ title: '' })
   const createArticle = useCreateArticle()
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    if (event) event.preventDefault()
-    if (!inputs.title) {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    event?.preventDefault()
+    if (inputs.title === '') {
       window.alert('No title provided')
       return
     }
@@ -19,7 +25,7 @@ const useCreateArticleForm = () => {
     setInputs({ title: '' })
   }
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.persist()
     setInputs(inputs => ({ ...inputs, [event.target.name]: event.target.value }))
   }
@@ -27,7 +33,7 @@ const useCreateArticleForm = () => {
   return { inputs, handleInputChange, handleSubmit }
 }
 
-const ArticleList = () => {
+const ArticleList = (): React.ReactElement | string => {
   const { inputs, handleInputChange, handleSubmit } = useCreateArticleForm()
 
   const { data, loading, error } = useListArticles()
@@ -36,20 +42,20 @@ const ArticleList = () => {
 
   return (
     <>
-      {data.articles && data.articles.map((article: Article) => (
+      {data?.articles?.map((article: Article) => (
         <ArticleListItem
           key={article.id}
           article={article}
         />
       ))}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(event) => { void handleSubmit(event) }}>
         <input
           type='text'
           placeholder='Enter an article title'
           name='title'
           required
-          value={inputs.title}
+          value={inputs.title as string}
           onChange={handleInputChange}
         />
         <button type='submit'>Add article</button>
