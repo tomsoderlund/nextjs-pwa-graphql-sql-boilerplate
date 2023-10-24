@@ -17,7 +17,7 @@ interface ArticlePageProps {
 }
 
 const ArticlePage = ({ articleId }: ArticlePageProps): React.ReactElement => {
-  console.log('articleId:', articleId);
+  console.log('articleId:', articleId)
   const { data, loading, error } = useGetArticle(articleId ?? 0)
   if (error != null || (data !== undefined && (data.articleById === undefined || data.articleById === null))) {
     throw new Error(`Error: ${error?.message as string}`)

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import type { GetStaticPropsResult } from 'next'
 
 import { config } from '../config/config'
@@ -20,14 +19,10 @@ function StartPage ({ title }: StartPageProps): React.ReactElement {
 
       <ArticleList />
 
-      <h2>Routing</h2>
-      <p>Current query: <strong>{JSON.stringify('query')}</strong></p>
+      <h2>GraphQL</h2>
+      <p>Try the <a target='_blank' rel='noopener noreferrer' href='/api/graphiql'>GraphQL Explorer</a></p>
 
-      <ul>
-        <li><Link legacyBehavior href='/'><a>Home</a></Link></li>
-        <li><Link legacyBehavior href='/articles/other-1'><a>Other route</a></Link></li>
-      </ul>
-
+      <h2>Source code</h2>
       <p>Get the <a target='_blank' rel='noopener noreferrer' href='https://github.com/tomsoderlund/nextjs-pwa-graphql-sql-boilerplate'>source code for nextjs-pwa-graphql-sql-boilerplate</a></p>
     </>
   )
