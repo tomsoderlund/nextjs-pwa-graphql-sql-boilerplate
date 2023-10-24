@@ -20,7 +20,7 @@ const useCreateArticleForm = (): CreateArticleFormProps => {
       window.alert('No title provided')
       return
     }
-    await createArticle({ variables: inputs })
+    await createArticle({ variables: { input: { article: inputs } } })
     // Clear input form when done
     setInputs({ title: '' })
   }
@@ -42,7 +42,7 @@ const ArticleList = (): React.ReactElement | string => {
 
   return (
     <>
-      {data?.articles?.map((article: Article) => (
+      {data?.allArticlesList?.map((article) => (
         <ArticleListItem
           key={article.id}
           article={article}

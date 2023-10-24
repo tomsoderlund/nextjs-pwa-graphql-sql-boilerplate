@@ -11,11 +11,10 @@ const usePromptAndUpdateArticle = (article: Article, fieldName: keyof Article): 
   const handleUpdate = async (): Promise<void> => {
     const newValue = window.prompt(`New value for ${fieldName}?`, article[fieldName])
     if (newValue !== null) {
-      const variables = {
-        id: article.id,
+      const articlePatch = {
         [fieldName]: newValue
       }
-      await updateArticle({ variables })
+      await updateArticle({ variables: { id: article.id, articlePatch } })
     }
   }
 
