@@ -5,7 +5,7 @@
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
   "scripts": {
-    "dev": "bun run api-types:watch & bun run dev:next",
+    "dev": "yarn api-types:watch & yarn dev:next",
     "dev:next": "next dev -p 3003",
     "build": "next build",
     "start": "next start",
@@ -36,7 +36,7 @@
     "eslint-config-next": "13.4.19",
     "firebase": "^10.5.0",
     "graphile-utils": "^4.13.0",
-    "graphql": "^16.8.1",
+    "graphql": "^15.8.0",
     "next": "13.4.19",
     "pg": "^8.11.3",
     "postgraphile": "^4.13.0",
