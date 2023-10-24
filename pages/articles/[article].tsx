@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { useGetArticle } from '../../graphql/collections/article/hooks'
 
+import { Article } from 'graphql/__generated__/graphql'
+import { useGetArticle } from '../../graphql/collections/article/hooks'
 import ArticleDetails from '../../components/articles/ArticleDetails'
 
 interface ArticlePageProps {
@@ -13,8 +14,9 @@ interface ArticlePageProps {
 
 const ArticlePage: React.FC<ArticlePageProps> = ({ query, asPath }) => {
   const { data, loading, error } = useGetArticle(parseInt(query.article))
-
-  if (error != null || (data !== undefined && (data.article === undefined || data.article === null))) throw new Error(`Error: ${error?.message as string}`)
+  if (error != null || (data !== undefined && (data.articleById === undefined || data.articleById === null))) {
+    throw new Error(`Error: ${error?.message as string}`)
+  }
 
   return (
     <>
@@ -23,7 +25,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ query, asPath }) => {
           <div>Loading...</div>
           )
         : (
-          <ArticleDetails article={data.article} />
+          <ArticleDetails article={data?.articleById as Article} />
           )}
 
       <h2>Routing</h2>
