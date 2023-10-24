@@ -17,7 +17,6 @@ interface ArticlePageProps {
 }
 
 const ArticlePage = ({ articleId }: ArticlePageProps): React.ReactElement => {
-  console.log('articleId:', articleId)
   const { data, loading, error } = useGetArticle(articleId ?? 0)
   if (error != null || (data !== undefined && (data.articleById === undefined || data.articleById === null))) {
     throw new Error(`Error: ${error?.message as string}`)
@@ -47,7 +46,7 @@ const ArticlePage = ({ articleId }: ArticlePageProps): React.ReactElement => {
 export default ArticlePage
 
 export async function getStaticProps (context: GetStaticPropsContext<ArticlePageParams>): Promise<GetStaticPropsResult<ArticlePageProps>> {
-  const articleId = context.params?.articleId ?? null
+  const articleId = (context.params?.articleSlug as string)?.split('-')?.pop() ?? null
   return {
     props: {
       title: `Article ${articleId as string}`,
