@@ -1,5 +1,7 @@
 # Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL boilerplate
 
+**Note:** this is a new version using Postgraphile. See branch `old-graphql-server` if you want the old version.
+
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/github_preview.jpg)
 
 _Note: this is my v3 boilerplate for React web apps. See also my [Firebase and React Hooks boilerplate](https://github.com/tomsoderlund/nextjs-pwa-firebase-boilerplate), [Redux + REST + Postgres SQL boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [REST + MongoDB boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
@@ -12,12 +14,12 @@ Did you or your company find `nextjs-pwa-graphql-sql-boilerplate` useful? Please
 
 ## Why is this awesome?
 
-This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
+This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/vercel/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
-* **NEW: Can be deployed as [serverless functions on Zeit Now](#deploying-serverless-on-zeit-now).**
+* **NEW: Can be deployed as [serverless functions on Vercel](#deploying-serverless-on-vercel).**
 * A fast Postgres SQL database server.
 * [GraphQL API](#graphql-client-and-server) with Apollo.
 * React Hooks for business logic.
@@ -33,7 +35,7 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
+See [**nextjs-pwa-graphql-sql-boilerplate** running on Vercel here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
@@ -80,14 +82,8 @@ If you navigate to `http://localhost:3003/` you will see a web page with a list 
 ### GraphQL client and server
 
 Your GraphQL API server is running at `http://localhost:3003/api/graphql`.
-[Try the GraphQL playground](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphql) on the demo server.
-
-
-## Deploying
-
-You can either deploy as a [serverless deployment](https://zeit.co/docs/v2/serverless-functions/introduction/), or as a traditional Express server.
-
-Depending on which deployment you make, some files are unnecessary*.
+Your GraphQL Explorer is running at `http://localhost:3003/api/graphiql`.
+[Try the GraphQL Explorer](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphiql) on the demo server.
 
 
 ## Modifying the app to your needs
