@@ -1,4 +1,6 @@
-# Next.js serverless PWA with GraphQL (Apollo) and Postgres SQL boilerplate
+# Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL boilerplate
+
+**Note:** this is a new version using Postgraphile. See branch `old-graphql-server` if you want the old version.
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/github_preview.jpg)
 
@@ -12,12 +14,12 @@ Did you or your company find `nextjs-pwa-graphql-sql-boilerplate` useful? Please
 
 ## Why is this awesome?
 
-This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/zeit/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
+This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/vercel/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
 * Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
 * Both front-end client and GraphQL/SQL server in one project.
-* **NEW: Can be deployed as [serverless functions on Zeit Now](#deploying-serverless-on-zeit-now).**
+* **NEW: Can be deployed as [serverless functions on Vercel](#deploying-serverless-on-vercel).**
 * A fast Postgres SQL database server.
 * [GraphQL API](#graphql-client-and-server) with Apollo.
 * React Hooks for business logic.
@@ -33,7 +35,7 @@ _Lightning fast, all JavaScript._
 
 ## Demo
 
-See [**nextjs-pwa-graphql-sql-boilerplate** running on Zeit Now here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
+See [**nextjs-pwa-graphql-sql-boilerplate** running on Vercel here](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/).
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
@@ -51,7 +53,7 @@ Remove the .git folder since you want to create a new repository
 Install dependencies:
 
     cd [MY_APP]
-    yarn  # or npm install
+    yarn
 
 Install Postgres and set up the database:
 
@@ -68,7 +70,7 @@ Configure the `.env` file.
 
 Start it by doing the following:
 
-    yarn dev  # or 'yarn now' to run with Zeit Now serverless
+    yarn dev
 
 In production:
 
@@ -80,44 +82,8 @@ If you navigate to `http://localhost:3003/` you will see a web page with a list 
 ### GraphQL client and server
 
 Your GraphQL API server is running at `http://localhost:3003/api/graphql`.
-[Try the GraphQL playground](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphql) on the demo server.
-
-
-## Deploying
-
-You can either deploy as a [serverless deployment](https://zeit.co/docs/v2/serverless-functions/introduction/), or as a traditional Express server.
-
-Depending on which deployment you make, some files are unnecessary*.
-
-### Deploying serverless (on Zeit Now)
-
-Run in development mode with:
-
-    yarn now
-
-Deploy to Now with:
-
-	yarn deploy
-
-*Unnecessary files:
-
-- `apollo-server-express` module
-- `/server` folder
-
-(Shortcut: `yarn remove apollo-server-express; rm -rf server`)
-
-### Deploying as Express server (on Heroku)
-
-    heroku create [MY_APP]
-    heroku addons:create heroku-postgresql:hobby-dev
-    git push heroku master
-
-*Unnecessary files:
-
-- `/api` folder
-- `apollo-server-micro` module
-
-(Shortcut: `yarn remove apollo-server-micro; rm -rf api`)
+Your GraphQL Explorer is running at `http://localhost:3003/api/graphiql`.
+[Try the GraphQL Explorer](https://nextjs-pwa-graphql-sql-boilerplate.tomsoderlund.now.sh/api/graphiql) on the demo server.
 
 
 ## Modifying the app to your needs
@@ -134,12 +100,12 @@ The database item is called “Article”, but you probably want something else 
 
 Rename the files:
 
-    mkdir graphql/{newName}
-    mv graphql/article/hooks.js graphql/{newName}/hooks.js
-    mv graphql/article/queries.js graphql/{newName}/queries.js
-    mv graphql/article/resolvers.js graphql/{newName}/resolvers.js
-    mv graphql/article/schema.js graphql/{newName}/schema.js
-    rm -r graphql/article
+    mkdir graphql/collections/{newName}
+    mv graphql/collections/article/hooks.js graphql/collections/{newName}/hooks.js
+    mv graphql/collections/article/queries.js graphql/collections/{newName}/queries.js
+    mv graphql/collections/article/resolvers.js graphql/collections/{newName}/resolvers.js
+    mv graphql/collections/article/schema.js graphql/collections/{newName}/schema.js
+    rm -r graphql/collections/article
     mkdir -p components/{newName}s
     mv components/articles/ArticleList.js components/{newName}s/{NewName}List.js
     mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js
@@ -153,7 +119,7 @@ Then, do search/replace inside the files for different casing: article, Article,
 
 ### Create a new data model/object type
 
-    yarn model  # Creates a new folder graphql/newObject with 4 empty JS files inside
+    yarn new:collection  # Creates a new folder graphql/newObject with 4 empty JS files inside
 
 ### Change port number
 
@@ -162,7 +128,7 @@ Do search/replace for "3003" to something else.
 ### How to remove/replace SQL database
 
 1. Remove references to `graphql/postgres`
-2. `graphql/article/resolvers.js`: remove “sql*” references
+2. `graphql/collections/article/resolvers.js`: remove “sql*” references
 
 ### Change visual theme (CSS)
 

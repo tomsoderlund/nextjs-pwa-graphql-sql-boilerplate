@@ -88,3 +88,5 @@ typings/
 .dynamodb/
 
 .now
+.DS_Store
+.env.local
