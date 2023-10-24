@@ -33,7 +33,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "graphql/__generated__"
+    "node_modules"
   ]
 }
