@@ -19,6 +19,9 @@ const documents = {
     "\n  mutation CreateArticle ($input: CreateArticleInput!) {\n    createArticle(input: $input) {\n      article {\n        id\n        ...ArticleShortInfo\n      }\n    }\n  }\n": types.CreateArticleDocument,
     "\n  mutation UpdateArticle ($id: Int!, $articlePatch: ArticlePatch!) {\n    updateArticleById(input: {id: $id, articlePatch: $articlePatch}) {\n      article {\n        ...ArticleShortInfo\n      }\n    }\n  }\n": types.UpdateArticleDocument,
     "\n  mutation DeleteArticle ($id: Int!) {\n    deleteArticleById(input: {id: $id}) {\n      article {\n        ...ArticleShortInfo\n      }\n    }\n  }\n": types.DeleteArticleDocument,
+    "\n  fragment UserShortInfo on User {\n    id\n    firebaseUid\n  }\n": types.UserShortInfoFragmentDoc,
+    "\n  query GetUser ($firebaseUid: String!) {\n    userByFirebaseUid(firebaseUid: $firebaseUid) {\n      id\n    }\n  }\n": types.GetUserDocument,
+    "\n  mutation CreateUser ($input: CreateUserInput!) {\n    createUser(input: $input) {\n      user {\n        ...UserShortInfo\n      }\n    }\n  }\n": types.CreateUserDocument,
 };
 
 /**
@@ -59,6 +62,18 @@ export function gql(source: "\n  mutation UpdateArticle ($id: Int!, $articlePatc
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  mutation DeleteArticle ($id: Int!) {\n    deleteArticleById(input: {id: $id}) {\n      article {\n        ...ArticleShortInfo\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation DeleteArticle ($id: Int!) {\n    deleteArticleById(input: {id: $id}) {\n      article {\n        ...ArticleShortInfo\n      }\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  fragment UserShortInfo on User {\n    id\n    firebaseUid\n  }\n"): (typeof documents)["\n  fragment UserShortInfo on User {\n    id\n    firebaseUid\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query GetUser ($firebaseUid: String!) {\n    userByFirebaseUid(firebaseUid: $firebaseUid) {\n      id\n    }\n  }\n"): (typeof documents)["\n  query GetUser ($firebaseUid: String!) {\n    userByFirebaseUid(firebaseUid: $firebaseUid) {\n      id\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  mutation CreateUser ($input: CreateUserInput!) {\n    createUser(input: $input) {\n      user {\n        ...UserShortInfo\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation CreateUser ($input: CreateUserInput!) {\n    createUser(input: $input) {\n      user {\n        ...UserShortInfo\n      }\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

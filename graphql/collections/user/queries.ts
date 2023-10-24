@@ -1,4 +1,3 @@
-/*
 import { gql } from 'graphql/__generated__'
 
 // ----- Fragments -----
@@ -16,14 +15,6 @@ export const GET_USER = gql(`
   query GetUser ($firebaseUid: String!) {
     userByFirebaseUid(firebaseUid: $firebaseUid) {
       id
-      userGoodsownersByUserIdList {
-        goodsownerByGoodsownerId {
-          id
-          ongoingGoodsownerId
-          name
-        }
-        isAdmin
-      }
     }
   }
 `)
@@ -39,4 +30,3 @@ export const CREATE_USER = gql(`
     }
   }
 `)
-*/
