@@ -1,6 +1,5 @@
 import React from 'react'
 import type { GetStaticPropsResult } from 'next'
-import { Button } from '@mui/material'
 
 import { config } from 'config/config'
 import { useUser } from 'graphql/collections/user/hooks'
@@ -19,11 +18,11 @@ function SigninPage (): React.ReactElement {
       </>
       )
     : (
-      <Button
+      <button
         onClick={() => { void signOut?.() }}
       >
         Sign out
-      </Button>
+      </button>
       )
 }
 
