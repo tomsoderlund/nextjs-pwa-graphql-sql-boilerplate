@@ -95,18 +95,21 @@ The database item is called “Article”, but you probably want something else 
 Rename the files:
 
     mkdir graphql/collections/{newName}
-    mv graphql/collections/article/hooks.js graphql/collections/{newName}/hooks.js
-    mv graphql/collections/article/queries.js graphql/collections/{newName}/queries.js
-    mv graphql/collections/article/resolvers.js graphql/collections/{newName}/resolvers.js
-    mv graphql/collections/article/schema.js graphql/collections/{newName}/schema.js
+    mv graphql/collections/article/hooks.ts graphql/collections/{newName}/hooks.ts
+    mv graphql/collections/article/queries.ts graphql/collections/{newName}/queries.ts
+    mv graphql/collections/article/resolvers.ts graphql/collections/{newName}/resolvers.ts
+    mv graphql/collections/article/schema.sql graphql/collections/{newName}/schema.sql
+    mv graphql/collections/article/serverQueries.ts graphql/collections/{newName}/serverQueries.ts
     rm -r graphql/collections/article
+
     mkdir -p components/{newName}s
-    mv components/articles/ArticleList.js components/{newName}s/{NewName}List.js
-    mv components/articles/ArticleListItem.js components/{newName}s/{NewName}ListItem.js
-    mv components/articles/ArticleDetails.js components/{newName}s/{NewName}Details.js
+    mv components/articles/ArticleList.tsx components/{newName}s/{NewName}List.tsx
+    mv components/articles/ArticleListItem.tsx components/{newName}s/{NewName}ListItem.tsx
+    mv components/articles/ArticleDetails.tsx components/{newName}s/{NewName}Details.tsx
     rm -r components/articles
+
     mkdir pages/{newName}s
-    mv "pages/articles/[article].js" "pages/{newName}s/[{newName}].js"
+    mv "pages/articles/[articleSlug].tsx" "pages/{newName}s/[{newName}Slug].tsx"
     rm -r pages/articles
 
 Then, do search/replace inside the files for different casing: article, Article, ARTICLE
