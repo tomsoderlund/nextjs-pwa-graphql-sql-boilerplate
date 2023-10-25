@@ -6,31 +6,25 @@
 
 _Note: this is my v3 boilerplate for React web apps. See also my [Firebase and React Hooks boilerplate](https://github.com/tomsoderlund/nextjs-pwa-firebase-boilerplate), [Redux + REST + Postgres SQL boilerplate](https://github.com/tomsoderlund/nextjs-sql-rest-api-boilerplate) and [REST + MongoDB boilerplate](https://github.com/tomsoderlund/nextjs-express-mongoose-crudify-boilerplate)._
 
-## Support this project
-
-Did you or your company find `nextjs-pwa-graphql-sql-boilerplate` useful? Please consider giving a small donation, it helps me spend more time on open-source projects:
-
-[![Support Tom on Ko-Fi.com](https://www.tomsoderlund.com/ko-fi_tomsoderlund_50.png)](https://ko-fi.com/tomsoderlund)
-
 ## Why is this awesome?
 
 This is a great template for a any project where you want **React (with Hooks)** (with server-side rendering, powered by [Next.js](https://github.com/vercel/next.js)) as frontend and **GraphQL and Postgres SQL** as backend.
 _Lightning fast, all JavaScript._
 
-* Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
-* Both front-end client and GraphQL/SQL server in one project.
-* **NEW: Can be deployed as [serverless functions on Vercel](#deploying-serverless-on-vercel).**
-* A fast Postgres SQL database server.
-* [GraphQL API](#graphql-client-and-server) with Apollo.
-* React Hooks for business logic.
-* PWA features such as `manifest.json` and offline support (`next-offline`).
-* Easy to style the visual theme using CSS (e.g. using [Design Profile Generator](https://tomsoderlund.github.io/design-profile-generator/)).
-* `sitemap.xml` and `robots.txt` support.
-* Google Analytics and `google-site-verification` support (see `config/config.js`).
-* Flexible configuration with `config/config.js` and `.env` file.
-* Hot reloading with `nodemon`.
-* Unit testing with Jasmine (`yarn unit`).
-* Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
+- Great starting point for a [PWA (Progressive Web App)](https://en.wikipedia.org/wiki/Progressive_web_applications).
+- Data objects defined in Postgres database, and then propagated all the way to React frontend (with full TypeScript support).
+- Both front-end client and GraphQL/SQL server in one project.
+- Can be deployed as [serverless functions on Vercel](#deploying-serverless-on-vercel).
+- A fast Postgres SQL database server.
+- [GraphQL API](#graphql-client-and-server) with Apollo.
+- React Hooks for business logic.
+- PWA features such as `manifest.json` and offline support (`next-offline`).
+- Easy to style the visual theme using CSS (e.g. using [Design Profile Generator](https://tomsoderlund.github.io/design-profile-generator/)).
+- `sitemap.xml` and `robots.txt` support.
+- Google Analytics and `google-site-verification` support (see `config/config.js`).
+- Flexible configuration with `config/config.js` and `.env` file.
+- Unit testing with Jasmine (`yarn unit`).
+- Code linting and formatting with StandardJS (`yarn lint`/`yarn fix`).
 
 
 ## Demo
@@ -123,7 +117,7 @@ Then, do search/replace inside the files for different casing: article, Article,
 
 ### Change port number
 
-Do search/replace for "3003" to something else.
+Do search/replace for `3003` to something else.
 
 ### How to remove/replace SQL database
 
@@ -135,3 +129,10 @@ Do search/replace for "3003" to something else.
 1. Change colors in `public/manifest.json`
 2. Change CSS in `public/app.css`
 3. Change font in `PageHead.js`
+
+
+## Support this project
+
+Did you or your company find `nextjs-pwa-graphql-sql-boilerplate` useful? Please consider giving a small donation, it helps me spend more time on open-source projects:
+
+[![Support Tom on Ko-Fi.com](https://www.tomsoderlund.com/ko-fi_tomsoderlund_50.png)](https://ko-fi.com/tomsoderlund)
