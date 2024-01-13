@@ -95,11 +95,11 @@ The database item is called “Article”, but you probably want something else 
 Rename the files:
 
     mkdir graphql/collections/{newName}
-    mv graphql/collections/article/hooks.ts graphql/collections/{newName}/hooks.ts
-    mv graphql/collections/article/queries.ts graphql/collections/{newName}/queries.ts
-    mv graphql/collections/article/resolvers.ts graphql/collections/{newName}/resolvers.ts
-    mv graphql/collections/article/schema.sql graphql/collections/{newName}/schema.sql
-    mv graphql/collections/article/serverQueries.ts graphql/collections/{newName}/serverQueries.ts
+    mv graphql/collections/article/hooks.ts graphql/collections/{newName}
+    mv graphql/collections/article/queries.ts graphql/collections/{newName}
+    mv graphql/collections/article/resolvers.ts graphql/collections/{newName}
+    mv graphql/collections/article/schema.sql graphql/collections/{newName}
+    mv graphql/collections/article/serverQueries.ts graphql/collections/{newName}
     rm -r graphql/collections/article
 
     mkdir -p components/{newName}s
