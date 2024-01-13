@@ -6,7 +6,7 @@ gql(`
   fragment ArticleShortInfo on Article {
     id
     title
-    dateCreated
+    createdDate
   }
 `)
 
@@ -14,7 +14,7 @@ gql(`
 
 export const LIST_ARTICLES = gql(`
   query ListArticles {
-    allArticlesList (orderBy: DATE_CREATED_DESC) {
+    allArticlesList (orderBy: CREATED_DATE_DESC) {
       id
       ...ArticleShortInfo
     }
