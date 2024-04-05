@@ -44,7 +44,7 @@ export const camelToSnake = (str: string): string => str.replace(/([A-Z0-9])/g, 
 const isDate = (obj: any): boolean => obj.constructor.toString().includes('Date')
 
 export const formatSqlValue = (obj: any): any => typeof obj === 'string'
-  ? `'${obj}'`
+  ? `'${obj.replace(/'/g, "''")}'`
   : isDate(obj)
     ? `'${dateAsISO(obj) as string}'`
     : obj
@@ -64,6 +64,7 @@ const mapKeysToCamelCase = (obj: any): any => {
   return obj
 }
 
+// const sqlString = createUpsertQuery('customer', 'customer_number', [customerNumber], customerFieldsWithNoCustomerNumber)
 export const createUpsertQuery = (tableName: string, keyFieldNames: string, keyFieldValues: any[], fieldsWithNoOverlap: any): string => {
   const fieldNames = Object.keys(fieldsWithNoOverlap).map(camelToSnake)
   const fieldValues = [...keyFieldValues, ...Object.values(fieldsWithNoOverlap)].map(formatSqlValue)
