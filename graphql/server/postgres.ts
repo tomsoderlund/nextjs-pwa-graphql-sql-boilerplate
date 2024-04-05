@@ -70,7 +70,7 @@ export const createUpsertQuery = (tableName: string, fieldsRequiredNames: string
   const allFieldsNames = [
     ...fieldsRequiredNames.split(',').map(s => s.replace(/'/g, '').trim()),
     ...Object.keys(fieldsNotRequired)
-  ].map(formatSqlValue)
+  ].map(camelToSnake)
   const allFieldsValues = [
     ...fieldsRequiredValues,
     ...Object.values(fieldsNotRequired)
