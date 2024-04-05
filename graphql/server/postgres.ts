@@ -65,12 +65,22 @@ const mapKeysToCamelCase = (obj: any): any => {
 }
 
 // const sqlString = createUpsertQuery('customer', 'customer_number', [customerNumber], customerFieldsWithNoCustomerNumber)
-export const createUpsertQuery = (tableName: string, keyFieldNames: string, keyFieldValues: any[], fieldsWithNoOverlap: Record<string, any> = {}): string => {
-  const fieldNames = Object.keys(fieldsWithNoOverlap).map(camelToSnake)
-  const fieldValues = [...keyFieldValues, ...Object.values(fieldsWithNoOverlap)].map(formatSqlValue)
-  const sqlString = `INSERT INTO "${tableName}" (${keyFieldNames}, ${fieldNames.join(', ')})
-    VALUES (${fieldValues.join(', ')})
-    ON CONFLICT (${keyFieldNames})
-    DO UPDATE SET ${fieldNames.map(fieldName => `${fieldName} = EXCLUDED.${fieldName}`).join(', ')};`
+export const createUpsertQuery = (tableName: string, fieldsRequiredNames: string, fieldsRequiredValues: any[], fieldsNotRequired: Record<string, any> = {}): string => {
+  const fieldsNotRequiredNames = Object.keys(fieldsNotRequired).map(camelToSnake)
+  const allFieldsNames = [
+    ...fieldsRequiredNames.split(',').map(s => s.replace(/'/g, '').trim()),
+    ...Object.keys(fieldsNotRequired)
+  ].map(formatSqlValue)
+  const allFieldsValues = [
+    ...fieldsRequiredValues,
+    ...Object.values(fieldsNotRequired)
+  ].map(formatSqlValue)
+  const sqlString = `INSERT INTO "${tableName}"
+    (${allFieldsNames.join(', ').replace(/'/g, '')})
+    VALUES (${allFieldsValues.join(', ')})
+    ON CONFLICT (${fieldsRequiredNames})\n` +
+    (fieldsNotRequiredNames.length > 0
+      ? `DO UPDATE SET ${fieldsNotRequiredNames.map(fieldName => `${fieldName} = EXCLUDED.${fieldName}`).join(', ')};`
+      : 'DO NOTHING;')
   return sqlString
 }
