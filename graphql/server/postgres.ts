@@ -65,7 +65,7 @@ const mapKeysToCamelCase = (obj: any): any => {
 }
 
 // const sqlString = createUpsertQuery('customer', 'customer_number', [customerNumber], customerFieldsWithNoCustomerNumber)
-export const createUpsertQuery = (tableName: string, keyFieldNames: string, keyFieldValues: any[], fieldsWithNoOverlap: any): string => {
+export const createUpsertQuery = (tableName: string, keyFieldNames: string, keyFieldValues: any[], fieldsWithNoOverlap: Record<string, any> = {}): string => {
   const fieldNames = Object.keys(fieldsWithNoOverlap).map(camelToSnake)
   const fieldValues = [...keyFieldValues, ...Object.values(fieldsWithNoOverlap)].map(formatSqlValue)
   const sqlString = `INSERT INTO "${tableName}" (${keyFieldNames}, ${fieldNames.join(', ')})
