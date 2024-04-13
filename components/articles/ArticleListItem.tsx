@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { Article } from 'graphql/__generated__/graphql'
-import { useUpdateArticle, useDeleteArticle } from '../../graphql/collections/article/hooks'
+import { articlePath, useUpdateArticle, useDeleteArticle } from '../../graphql/collections/article/hooks'
 
 type VoidFunction = () => Promise<void>
 
@@ -36,8 +36,6 @@ const usePromptAndDeleteArticle = (article: Article): VoidFunction => {
   return handleDelete
 }
 
-const toSlug = (str: string): string => str?.replace(/ /g, '-')?.replace(/[^\w-]+/g, '')?.toLowerCase()
-
 interface ArticleListItemProps {
   article: any
   inProgress?: boolean
@@ -49,7 +47,7 @@ const ArticleListItem = ({ article, inProgress = false }: ArticleListItemProps):
 
   return (
     <div className={inProgress === article.id ? 'inProgress' : ''} title={`id: ${article.id as number}`}>
-      <Link legacyBehavior href={`/articles/${toSlug(article.title)}-${article.id as number}`}><a>{article.title}</a></Link>
+      <Link legacyBehavior href={articlePath(article)}><a>{article.title}</a></Link>
       <a className='action update' onClick={() => { void promptAndUpdateArticle() }}>Update</a>
       <a className='action delete' onClick={() => { void promptAndDeleteArticle() }}>Delete</a>
       <style jsx>{`

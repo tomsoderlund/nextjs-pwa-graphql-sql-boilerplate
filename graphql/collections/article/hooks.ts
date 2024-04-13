@@ -19,7 +19,10 @@ Using 'Article' type in your code:
 
 import { useQuery, QueryResult, useMutation, MutationFunction } from '@apollo/client'
 
+import toSlug from 'lib/toSlug'
+
 import {
+  Article,
   GetArticleQuery,
   GetArticleQueryVariables,
   ListArticlesQuery,
@@ -38,6 +41,8 @@ import {
   UPDATE_ARTICLE,
   DELETE_ARTICLE
 } from './queries'
+
+export const articlePath = (article: Article): string => `/articles/${toSlug(article.title as string)}-${article.id}`
 
 export const useListArticles = (): QueryResult<ListArticlesQuery, ListArticlesQueryVariables> => {
   return useQuery(LIST_ARTICLES)
