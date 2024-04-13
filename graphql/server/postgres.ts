@@ -64,22 +64,18 @@ const mapKeysToCamelCase = (obj: any): any => {
   return obj
 }
 
-// const sqlString = createUpsertQuery('customer', 'customer_number', [customerNumber], customerFieldsWithNoCustomerNumber)
-export const createUpsertQuery = (tableName: string, fieldsRequiredNames: string, fieldsRequiredValues: any[], fieldsNotRequired: Record<string, any> = {}): string => {
+// const sqlString = createUpsertQuery('customer', { customerNumber: 123 }, customerFieldsWithNoCustomerNumber)
+export const createUpsertQuery = (tableName: string, fieldsRequired: Record<string, any>, fieldsNotRequired: Record<string, any> = {}): string => {
+  const fieldsRequiredNames = Object.keys(fieldsRequired).map(camelToSnake)
+  const fieldsRequiredValues = Object.values(fieldsRequired).map(formatSqlValue)
   const fieldsNotRequiredNames = Object.keys(fieldsNotRequired).map(camelToSnake)
-  const allFieldsNames = [
-    ...fieldsRequiredNames.split(',').map(s => s.replace(/'/g, '').trim()),
-    ...Object.keys(fieldsNotRequired)
-  ].map(camelToSnake)
-  const allFieldsValues = [
-    ...fieldsRequiredValues,
-    ...Object.values(fieldsNotRequired)
-  ].map(formatSqlValue)
+  const allFieldsNames = [...fieldsRequiredNames, ...fieldsNotRequiredNames]
+  const allFieldsValues = [...fieldsRequiredValues, ...Object.values(fieldsNotRequired).map(formatSqlValue)]
   const sqlString = `INSERT INTO "${tableName}"
     (${allFieldsNames.join(', ').replace(/'/g, '')})
     VALUES (${allFieldsValues.join(', ')})
-    ON CONFLICT (${fieldsRequiredNames})\n` +
-    (fieldsNotRequiredNames.length > 0
+    ON CONFLICT (${fieldsRequiredNames.join(', ')})
+    ` + (fieldsNotRequiredNames.length > 0
       ? `DO UPDATE SET ${fieldsNotRequiredNames.map(fieldName => `${fieldName} = EXCLUDED.${fieldName}`).join(', ')};`
       : 'DO NOTHING;')
   return sqlString
