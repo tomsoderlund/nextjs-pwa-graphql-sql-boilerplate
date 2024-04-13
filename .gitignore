@@ -88,5 +88,6 @@ typings/
 .dynamodb/
 
 .now
+.vercel
 .DS_Store
 .env.local
