@@ -49,7 +49,10 @@ Install dependencies:
     cd [MY_APP]
     yarn
 
-Install Postgres and set up the database:
+Set up Postgres database, either:
+
+1. Get a cloud Postgres database from [Vercel](https://vercel.com/docs/storage/vercel-postgres), AWS or similar.
+2. Local PostgresInstall Postgres and set up the database:
 
     psql postgres  # Start the Postgres command-line client
     
@@ -60,7 +63,9 @@ Install Postgres and set up the database:
     SELECT * FROM article;  -- Check data exists
     \q
 
-Configure the `.env` file.
+Create the `.env` file, then add `DATABASE_URL`:
+
+    cp .env.example .env
 
 Start it by doing the following:
 
@@ -87,6 +92,10 @@ Your GraphQL Explorer is running at `http://localhost:3003/api/graphiql`.
 Do search/replace for "nextjs-pwa-graphql-sql-boilerplate" AND "nextjs-pwa-graphql-sql" to something else.
 
 Change name in `public/manifest.json`
+
+### Change port number
+
+Do search/replace for `3003` to something else.
 
 ### Renaming “Article” to something else
 
@@ -117,10 +126,6 @@ Then, do search/replace inside the files for different casing: article, Article,
 ### Create a new data model/object type
 
     yarn new:collection  # Creates a new folder graphql/newObject with 4 empty JS files inside
-
-### Change port number
-
-Do search/replace for `3003` to something else.
 
 ### How to remove/replace SQL database
 
