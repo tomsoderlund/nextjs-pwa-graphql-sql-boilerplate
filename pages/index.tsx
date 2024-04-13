@@ -4,6 +4,7 @@ import type { GetStaticPropsResult } from 'next'
 import { config } from '../config/config'
 
 import ArticleList from '../components/articles/ArticleList'
+import CreateArticleForm from '../components/articles/CreateArticleForm'
 
 interface StartPageProps {
   title: string
@@ -17,6 +18,7 @@ function StartPage ({ title }: StartPageProps): React.ReactElement {
       <p><em>{config.appTagline}</em></p>
 
       <ArticleList />
+      <CreateArticleForm />
 
       <h2>GraphQL</h2>
       <p>Try the <a target='_blank' rel='noopener noreferrer' href='/api/graphiql'>GraphQL Explorer</a></p>

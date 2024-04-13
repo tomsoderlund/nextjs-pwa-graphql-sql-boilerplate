@@ -112,6 +112,7 @@ Rename the files:
     rm -r graphql/collections/article
 
     mkdir -p components/{newName}s
+    git mv components/articles/CreateArticleForm.tsx components/{newName}s/Create{NewName}Form.tsx
     git mv components/articles/ArticleList.tsx components/{newName}s/{NewName}List.tsx
     git mv components/articles/ArticleListItem.tsx components/{newName}s/{NewName}ListItem.tsx
     git mv components/articles/ArticleDetails.tsx components/{newName}s/{NewName}Details.tsx
