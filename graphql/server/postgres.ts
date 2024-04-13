@@ -5,7 +5,7 @@ import { dateAsISO } from 'lib/formatDate'
 // Postgres (pg)
 if (config.databaseUrl === undefined) throw new Error('.env DATABASE_URL not set')
 const postgresOptions: PoolConfig = {
-  connectionString: config.databaseUrl + '?sslmode=require',
+  connectionString: config.databaseUrl,
   max: 10
   // idleTimeoutMillis: 1000,
   // connectionTimeoutMillis: 1000
