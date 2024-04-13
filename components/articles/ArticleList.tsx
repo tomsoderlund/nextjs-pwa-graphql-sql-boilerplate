@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { Article } from 'graphql/__generated__/graphql'
+import { ArticleInput } from 'graphql/__generated__/graphql'
 import { useListArticles, useCreateArticle } from '../../graphql/collections/article/hooks'
 import ArticleListItem from './ArticleListItem'
 
 interface CreateArticleFormProps {
-  inputs: Partial<Article>
+  inputs: ArticleInput
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
 }
 
 const useCreateArticleForm = (): CreateArticleFormProps => {
-  const [inputs, setInputs] = React.useState({ title: '' })
+  const [inputs, setInputs] = React.useState<ArticleInput>({ title: '' })
   const createArticle = useCreateArticle()
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
