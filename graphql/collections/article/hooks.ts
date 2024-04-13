@@ -20,7 +20,6 @@ Using 'Article' type in your code:
 import { useQuery, QueryResult, useMutation, MutationFunction } from '@apollo/client'
 
 import toSlug from 'lib/toSlug'
-
 import {
   Article,
   GetArticleQuery,
