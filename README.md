@@ -33,6 +33,7 @@ See [**nextjs-pwa-graphql-sql-boilerplate** running on Vercel here](https://next
 
 ![nextjs-pwa-graphql-sql-boilerplate demo on phone](docs/demo.jpg)
 
+![GraphQL Explorer (/api/graphiql)](docs/graphiql.png)
 
 ## How to use
 
