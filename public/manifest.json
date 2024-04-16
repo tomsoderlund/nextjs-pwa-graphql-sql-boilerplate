@@ -1,8 +1,6 @@
 {
   "name": "Next.js PWA",
   "description": "Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL",
-  "theme_color": "#663399",
-  "background_color": "#663399",
   "icons": [
     {
       "src": "icon.png",
