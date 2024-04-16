@@ -25,7 +25,6 @@ export type Article = Node & {
   __typename?: 'Article';
   content?: Maybe<Scalars['String']['output']>;
   createdDate?: Maybe<Scalars['Datetime']['output']>;
-  henric?: Maybe<Scalars['String']['output']>;
   id: Scalars['Int']['output'];
   /** A globally unique identifier. Can be used in various places throughout the system to identify this single value. */
   nodeId: Scalars['ID']['output'];
@@ -38,8 +37,6 @@ export type ArticleCondition = {
   content?: InputMaybe<Scalars['String']['input']>;
   /** Checks for equality with the object’s `createdDate` field. */
   createdDate?: InputMaybe<Scalars['Datetime']['input']>;
-  /** Checks for equality with the object’s `henric` field. */
-  henric?: InputMaybe<Scalars['String']['input']>;
   /** Checks for equality with the object’s `id` field. */
   id?: InputMaybe<Scalars['Int']['input']>;
   /** Checks for equality with the object’s `title` field. */
@@ -50,7 +47,6 @@ export type ArticleCondition = {
 export type ArticleInput = {
   content?: InputMaybe<Scalars['String']['input']>;
   createdDate?: InputMaybe<Scalars['Datetime']['input']>;
-  henric?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
 };
@@ -59,7 +55,6 @@ export type ArticleInput = {
 export type ArticlePatch = {
   content?: InputMaybe<Scalars['String']['input']>;
   createdDate?: InputMaybe<Scalars['Datetime']['input']>;
-  henric?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['Int']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
 };
@@ -70,8 +65,6 @@ export enum ArticlesOrderBy {
   ContentDesc = 'CONTENT_DESC',
   CreatedDateAsc = 'CREATED_DATE_ASC',
   CreatedDateDesc = 'CREATED_DATE_DESC',
-  HenricAsc = 'HENRIC_ASC',
-  HenricDesc = 'HENRIC_DESC',
   IdAsc = 'ID_ASC',
   IdDesc = 'ID_DESC',
   Natural = 'NATURAL',
