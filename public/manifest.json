@@ -3,7 +3,7 @@
   "description": "Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "favicon.png",
       "sizes": "256x256",
       "type": "image/png"
     }
