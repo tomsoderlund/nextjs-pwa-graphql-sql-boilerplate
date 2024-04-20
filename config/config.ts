@@ -46,6 +46,9 @@ const completeConfig: AllConfigurations = {
     appTagline: manifest.description,
     appDescription: manifest.description,
     locale: 'en_US',
+    fonts: [
+      ['Inter', 'wght@300;400;500;700']
+    ],
     googleAnalyticsId: 'UA-XXXXXXX-X',
     databaseUrl: process.env.DATABASE_URL,
     graphqlPath: '/api/graphql'
