@@ -7,6 +7,7 @@ import client from '../graphql/apollo'
 import { googlePageview } from '../components/page/GoogleAnalytics'
 import PageHead from '../components/page/PageHead'
 import Notifications from '../components/page/Notifications'
+
 import 'node_modules/aether-css-framework/dist/aether.min.css'
 import '../styles/globals.css'
 
