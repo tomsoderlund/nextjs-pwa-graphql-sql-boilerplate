@@ -55,14 +55,16 @@ Set up Postgres database, either:
 1. Get a cloud Postgres database from [Vercel](https://vercel.com/docs/storage/vercel-postgres), AWS or similar.
 2. Local Postgres: Install Postgres and set up the database:
 
-    ```psql postgres  # Start the Postgres command-line client
+    ```
+    psql postgres  # Start the Postgres command-line client
     
     CREATE DATABASE "nextjs-pwa-graphql-sql";  -- You can also use \connect to connect to existing database
     \connect "nextjs-pwa-graphql-sql";
     CREATE TABLE article (id serial, title varchar(200), content text);  -- Create a blank table
     INSERT INTO article (title) VALUES ('The first article');  -- Add example data
     SELECT * FROM article;  -- Check data exists
-    \q```
+    \q
+    ```
 
 Create the `.env` file, then add `DATABASE_URL`:
 
