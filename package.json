@@ -1,6 +1,6 @@
 {
   "name": "nextjs-pwa-graphql-sql-boilerplate",
-  "description": "Next.js serverless PWA with GraphQL (Postgraphile, Apollo) and Postgres SQL",
+  "description": "Next.js serverless PWA with TypeScript + GraphQL (Postgraphile, Apollo) and Postgres SQL",
   "version": "2.0.0",
   "author": "Tom Söderlund <tom@tomsoderlund.com>",
   "license": "ISC",
