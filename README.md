@@ -68,7 +68,7 @@ Set up Postgres database, either:
 
 Create the `.env` file, then add `DATABASE_URL`:
 
-    cp .env.example .env
+    cp .env.example .env.local
 
 Start it by doing the following:
 
