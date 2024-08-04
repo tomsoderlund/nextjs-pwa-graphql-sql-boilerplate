@@ -6,8 +6,9 @@ import { config } from '../config/config'
 export default class MyDocument extends Document {
   // this.props (Server only): __NEXT_DATA__, ampPath, assetPrefix, bodyTags, canonicalBase, dangerousAsPath, dataOnly, devFiles, dynamicImports, files, hasCssMode, head, headTags, html, htmlProps, hybridAmp, inAmpMode, isDevelopment, polyfillFiles, staticMarkup, styles
   render (): React.ReactElement {
+    const { locale } = this.props.__NEXT_DATA__
     return (
-      <Html lang={config.locale?.split('_')[0]}>
+      <Html lang={locale}>
         <Head>
           <link rel='stylesheet' href={`https://fonts.googleapis.com/css2?${config.fonts?.map(([fontName, fontWeight]) => `family=${`${fontName.replace(/ /g, '+')}${fontWeight !== undefined ? ':' + fontWeight : ''}`}`).join('&') ?? ''}&display=swap`} />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
