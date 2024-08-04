@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "display": "standalone",
+  "display": "browser",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/"
