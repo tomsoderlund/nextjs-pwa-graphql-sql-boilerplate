@@ -3,7 +3,7 @@ import manifest from '../public/manifest.json'
 
 export const environment = process.env.NODE_ENV
 export const isDevelopment = process.env.NODE_ENV === 'development'
-const appSlug = 'nextjs-pwa-graphql-sql'
+const appSlug = 'nextjs-pwa-graphql-sql' // packageJson.name
 const serverPort = parseInt(process.env.PORT ?? '3003')
 
 interface EnvironmentConfiguration {
@@ -41,7 +41,7 @@ const completeConfig: AllConfigurations = {
     serverPort,
     appSlug,
     appVersion: packageJson.version,
-    appUrl: process.env.APP_URL ?? '',
+    appUrl: process.env.APP_URL ?? 'https://nextjs-pwa-graphql-sql-boilerplate.vercel.app/',
     appName: manifest.name,
     appTagline: manifest.description,
     appDescription: manifest.description,
@@ -49,7 +49,7 @@ const completeConfig: AllConfigurations = {
     fonts: [
       ['Inter', 'wght@300;400;500;700']
     ],
-    googleAnalyticsId: 'UA-XXXXXXX-X',
+    googleAnalyticsId: 'G-XXXXXXXXXX',
     databaseUrl: process.env.DATABASE_URL,
     graphqlPath: '/api/graphql'
   },

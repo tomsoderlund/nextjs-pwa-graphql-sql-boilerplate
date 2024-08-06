@@ -5,6 +5,7 @@ import { config } from '../config/config'
 
 export default class MyDocument extends Document {
   // this.props (Server only): __NEXT_DATA__, ampPath, assetPrefix, bodyTags, canonicalBase, dangerousAsPath, dataOnly, devFiles, dynamicImports, files, hasCssMode, head, headTags, html, htmlProps, hybridAmp, inAmpMode, isDevelopment, polyfillFiles, staticMarkup, styles
+  // Page props in: this.props.__NEXT_DATA__.props.pageProps
   render (): React.ReactElement {
     const { locale } = this.props.__NEXT_DATA__
     return (

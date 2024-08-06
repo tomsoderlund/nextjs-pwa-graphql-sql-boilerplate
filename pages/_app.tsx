@@ -8,7 +8,7 @@ import { googlePageview } from '../components/page/GoogleAnalytics'
 import PageHead from '../components/page/PageHead'
 import Notifications from '../components/page/Notifications'
 
-import 'node_modules/aether-css-framework/dist/aether.min.css'
+import 'aether-css-framework/dist/aether.min.css'
 import '../styles/globals.css'
 
 Router.events.on('routeChangeComplete', path => googlePageview(path))
