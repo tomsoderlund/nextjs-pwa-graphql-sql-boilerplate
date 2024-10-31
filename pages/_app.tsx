@@ -1,5 +1,6 @@
 import React from 'react'
 import type { AppProps } from 'next/app'
+import Link from 'next/link'
 import { ApolloProvider } from '@apollo/client'
 import Router from 'next/router'
 
@@ -25,6 +26,7 @@ export default function App ({ Component, pageProps, router }: AppProps): React.
           {...router}
         />
       </main>
+      <Link href='/' className='button circle-menu-button'><img src='/icons/home.svg' alt='Home' /></Link>
       <Footer />
       <Notifications />
     </ApolloProvider>
