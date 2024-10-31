@@ -6,6 +6,7 @@ import Router from 'next/router'
 import client from '../graphql/apollo'
 import { googlePageview } from '../components/page/GoogleAnalytics'
 import PageHead from '../components/page/PageHead'
+import Footer from '../components/page/Footer'
 import Notifications from '../components/page/Notifications'
 
 import 'aether-css-framework/dist/aether.min.css'
@@ -24,6 +25,7 @@ export default function App ({ Component, pageProps, router }: AppProps): React.
           {...router}
         />
       </main>
+      <Footer />
       <Notifications />
     </ApolloProvider>
   )

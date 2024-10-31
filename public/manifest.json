@@ -1,5 +1,5 @@
 {
-  "name": "Next.js PWA",
+  "name": "Next.js GraphQL PWA",
   "description": "Next.js serverless PWA with TypeScript + GraphQL (Postgraphile, Apollo) and Postgres SQL",
   "icons": [
     {
