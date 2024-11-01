@@ -142,6 +142,13 @@ Then, do search/replace inside the files for different casing: article, Article,
 2. Change CSS in `public/app.css`
 3. Change font in `PageHead.js`
 
+## Todo
+
+- SSR support:
+    - https://www.apollographql.com/docs/react/performance/server-side-rendering
+    - https://www.apollographql.com/blog/next-js-getting-started
+    - https://github.com/shshaw/next-apollo-ssr
+
 
 ## Support this project
 
